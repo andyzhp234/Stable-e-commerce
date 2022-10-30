@@ -1,0 +1,8 @@
+.leftPanel{
+  width: 250px;
+  height: 700px;
+  background-color: aqua;
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
+}
