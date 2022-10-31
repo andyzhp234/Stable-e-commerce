@@ -16,16 +16,6 @@ export default function ProfilePage() {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [message, setMessage] = React.useState(null)
-
-  React.useState(() => {
-    if (!userInfo) {
-      navigate('/login')
-    } else {
-      setName(userInfo.name)
-      setEmail(userInfo.email)
-    }
-  }, [navigate, userInfo])
-
   
   function userUpdateHandler(e) {
     e.preventDefault();
@@ -44,6 +34,15 @@ export default function ProfilePage() {
       dispatch(updateUserInfo(tmpUser))
     }
   }
+
+  React.useEffect(() => {
+    if (!userInfo) {
+      navigate('/login')
+    } else {
+      setName(userInfo.name)
+      setEmail(userInfo.email)
+    }
+  }, [navigate, userInfo])
 
 
   return (

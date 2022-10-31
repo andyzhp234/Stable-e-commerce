@@ -9,8 +9,8 @@ export default function OrderPage() {
   const params = useParams()
   const orderDetail = useSelector(state => state.order);
   const {order, pending, error, errorMessage} = orderDetail;
-  
-  console.log(order)
+
+
   React.useEffect(() => {
     dispatch(getOrderDetail(params.id))
   }, [dispatch, params.id])

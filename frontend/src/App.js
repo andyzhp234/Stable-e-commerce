@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import PrivateRoutes from "./utils/PrivateRoutes";
 import './css/app.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -20,6 +21,8 @@ import PaymentPage from "./pages/PaymentPage";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderPage from "./pages/OrderPage";
 
+
+
 function App() {
   return (
     <div className="App">
@@ -31,13 +34,17 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<SignupPage />} />
-          <Route path="/shipping" element={<ShippingPage />} />
-          <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/placeorder" element={<PlaceOrderPage />} />
-          <Route path="/order/:id" element={<OrderPage />} />
+
+          <Route element={<PrivateRoutes />}>
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/shipping" element={<ShippingPage />} />
+            <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/placeorder" element={<PlaceOrderPage />} />
+            <Route path="/order/:id" element={<OrderPage />} />
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
