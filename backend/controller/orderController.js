@@ -3,33 +3,33 @@ import Order from '../models/orderModel.js'
 
 // @desc    Create new Order
 // @route   POST /api/orders
-// @access  Private 
+// @access  Private
 const addOrderItems = async (req, res) => {
   try {
+    // adding Orders should be done by stripe webhook,
+    // this route is for manually adding orders.
     const {
       orderItems,
       shippingAddress,
       paymentMethod,
-      itemsPrice,
       taxPrice,
       shippingPrice,
-      totalPrice,
       subTotalPrice,
+      totalPrice,
     } = req.body;
   
     if (orderItems && orderItems.length === 0) {
       throw new Error('No order Items')
     } else {
       const order = new Order({
-        orderItems,
         user: req.user._id,
+        orderItems,
         shippingAddress,
         paymentMethod,
-        itemsPrice,
         taxPrice,
         shippingPrice,
-        totalPrice,
         subTotalPrice,
+        totalPrice,
       })
 
       const createdOrder = await order.save();
@@ -40,9 +40,10 @@ const addOrderItems = async (req, res) => {
   }
 }
 
+
 // @desc    Get Order By Id
 // @route   GET /api/orders/:id
-// @access  Private 
+// @access  Private
 const getOrderItems = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
@@ -55,6 +56,7 @@ const getOrderItems = async (req, res) => {
     res.status(404).json({message: error.message})
   }
 }
+
 
 // @desc    Update Order Payment Status
 // @route   PUT /api/orders/:id/pay

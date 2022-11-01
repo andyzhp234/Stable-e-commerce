@@ -12,6 +12,35 @@ import {
 } from "../slices/orderSlice";
 import axios from 'axios';
 
+
+export const startStripeCheckOut = (order) => {
+  // create-checkout-session
+  return async (dispatch, getState) => {
+    try {
+      let {user} = getState();
+      user = user.userInfo;
+      order['customerID'] = user._id;
+      const config = {
+        headers: {
+          'Content-Type' : 'application/json',
+          'Bearer': `${user.token}`
+        }
+      }
+      
+      const {data} = await axios.post(
+        'http://localhost:5000/stripe/create-checkout-session',
+        order,
+        config
+      )
+
+      window.location = data.url
+    } catch(error) {
+      console.log(error.message)
+    }
+  }
+}
+
+
 export const createOrder = (order) => {
   return async (dispatch, getState) => {
     try {
@@ -32,6 +61,7 @@ export const createOrder = (order) => {
         order,
         config
       )
+
       dispatch(orderCreateSuccess(data))
     } catch(error) {
       dispatch(

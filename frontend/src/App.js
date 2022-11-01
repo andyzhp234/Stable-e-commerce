@@ -4,6 +4,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+
 import PrivateRoutes from "./utils/PrivateRoutes";
 import './css/app.css';
 import Header from "./components/Header";
@@ -16,9 +17,6 @@ import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
-import ShippingPage from "./pages/ShippingPage";
-import PaymentPage from "./pages/PaymentPage";
-import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderPage from "./pages/OrderPage";
 
 
@@ -40,11 +38,14 @@ function App() {
 
           <Route element={<PrivateRoutes />}>
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/shipping" element={<ShippingPage />} />
-            <Route path="/payment" element={<PaymentPage />} />
-            <Route path="/placeorder" element={<PlaceOrderPage />} />
             <Route path="/order/:id" element={<OrderPage />} />
           </Route>
+
+{/* 
+          <Route path="/shipping" element={<ShippingPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/placeorder" element={<PlaceOrderPage />} /> */}
+
         </Routes>
         <Footer />
       </BrowserRouter>

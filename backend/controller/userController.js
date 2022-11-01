@@ -38,10 +38,10 @@ const authUser = async (req, res) => {
 
 // @desc    Get User Info
 // @route   Get /api/users/profile
-// @access  Private 
+// @access  Private
 const getUserProfile = async (req, res) => {
   try {
-    const user = await User.findOne(req.user._id)
+    const user = await User.findOne(req.user._id);
     if (user) {
       res.json({
         _id: user._id,
@@ -50,10 +50,10 @@ const getUserProfile = async (req, res) => {
         isAdmin: user.isAdmin,
       })
     } else {
-      throw new Error('User Not Found')      
+      throw new Error('User Not Found');
     }
   } catch(error) {
-    res.status(404).json({message: error.message})
+    res.status(404).json({message: error.message});
   }
 }
 
@@ -63,12 +63,12 @@ const getUserProfile = async (req, res) => {
 // @access  Private
 const updateUserProfile = async (req, res) => {
   try {
-    const user = await User.findOne(req.user._id)
+    const user = await User.findOne(req.user._id);
     if (user) {
-      user.name = req.body.name || user.name
-      user.email = req.body.email || user.email
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
       if (req.body.password) {
-        user.password = await hashPassword(req.body.password)
+        user.password = await hashPassword(req.body.password);
       }
 
       const updatedUser = await user.save();
@@ -81,10 +81,10 @@ const updateUserProfile = async (req, res) => {
         token: generateToken(updatedUser._id),
       })
     } else {
-      throw new Error('User Not Found')      
+      throw new Error('User Not Found');
     }
   } catch(error) {
-    res.status(404).json({message: error.message})
+    res.status(404).json({message: error.message});
   }
 }
 
@@ -94,10 +94,10 @@ const updateUserProfile = async (req, res) => {
 // @access  Public 
 const registerUser = async (req, res) => {
   try {
-    const {name, email, password} = req.body
-    const userExists = await User.findOne({ email })
+    const {name, email, password} = req.body;
+    const userExists = await User.findOne({ email });
     if (userExists) {
-      throw new Error('User Already Exists')
+      throw new Error('User Already Exists');
     } else {
       const user = await User.create({
         name,
@@ -114,11 +114,11 @@ const registerUser = async (req, res) => {
           token: generateToken(user._id),
         })
       } else {
-        throw new Error('User Not Found')
+        throw new Error('Failed to Create User');
       }
     }
   } catch(error) {
-    res.status(400).json({message: error.message})
+    res.status(400).json({message: error.message});
   }
 }
 
