@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-
-import {addToCart, deleteFromCart} from '../redux/action/apiCart.js'
+import {addToCart, deleteFromCart} from '../redux/action/apiCart.js';
+import {startStripeCheckOut} from '../redux/action/apiOrder.js';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -29,8 +29,8 @@ export default function CartPage() {
 
   function checkoutHandler(e) {
     e.preventDefault();
-    if (userInfo) {
-      navigate('/shipping')
+    if (userInfo && cartItems.length > 0) {
+      dispatch(startStripeCheckOut({orderItems: cart.cartItems}))
     } else {
       navigate('/login?redirect=cart')
     }
@@ -116,8 +116,6 @@ export default function CartPage() {
           Checkout
         </div>
       </div>
-
-        
     </div>
   )
 }

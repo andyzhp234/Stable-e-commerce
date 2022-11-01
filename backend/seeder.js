@@ -9,8 +9,8 @@ import connectDB from './config/db.js'
 
 
 dotenv.config();
-
 connectDB();
+
 
 const importData = async () => {
   try {
