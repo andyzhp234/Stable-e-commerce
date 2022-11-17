@@ -15,10 +15,10 @@ export default function Category() {
   const [openCategory, setOpenCategory] = React.useState(false);
   const [category, setCategory] = React.useState({
     Sofas: false,
-    Bookshelves: false,
+    "Media Storage": false,
     Desks: false,
     Beds: false,
-    "Office Chairs": false,
+    Chairs: false,
   });
 
   const firstUpdate = React.useRef(true);
@@ -95,19 +95,16 @@ export default function Category() {
             <FilterCheckBox label="Desks" checked={category.Desks} />
           </ListItemButton>
 
-          {/* Office Chairs */}
+          {/* Chairs */}
           <ListItemButton
             onChange={(e) => {
               setCategory({
                 ...category,
-                "Office Chairs": !category["Office Chairs"],
+                Chairs: !category["Chairs"],
               });
             }}
           >
-            <FilterCheckBox
-              label="Office Chairs"
-              checked={category["Office Chairs"]}
-            />
+            <FilterCheckBox label="Chairs" checked={category["Chairs"]} />
           </ListItemButton>
 
           {/* Beds */}
@@ -122,18 +119,18 @@ export default function Category() {
             <FilterCheckBox label="Beds" checked={category["Beds"]} />
           </ListItemButton>
 
-          {/* Bookshelves */}
+          {/* Media Storage */}
           <ListItemButton
             onChange={(e) => {
               setCategory({
                 ...category,
-                Bookshelves: !category.Bookshelves,
+                "Media Storage": !category["Media Storage"],
               });
             }}
           >
             <FilterCheckBox
-              label="Bookshelves"
-              checked={category.Bookshelves}
+              label="Media Storage"
+              checked={category["Media Storage"]}
             />
           </ListItemButton>
         </List>
