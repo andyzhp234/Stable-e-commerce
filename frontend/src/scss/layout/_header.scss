@@ -1,0 +1,131 @@
+@use "../abstracts/colors";
+@use "../abstracts/extendable";
+@use "../abstracts/breakpoints";
+
+.header {
+  @extend %flex-align-center;
+  width: 100%;
+  height: 82px;
+  padding-left: 20px;
+  border-bottom: 1px solid colors.$border-color;
+  background-color: white;
+  // position: fixed;
+  // z-index: 10;
+}
+
+.header-nav {
+  @extend %flex-align-center;
+  height: 100%;
+  width: 100%;
+
+  &__items {
+    @extend %flex-align-center;
+    height: 65%;
+    margin: 0 20px 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    position: relative;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include breakpoints.breakpoint(mobile) {
+      display: none;
+    }
+
+    &--active {
+      color: colors.$header-modifier-highlight;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: colors.$header-modifier-highlight;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 200ms ease-in;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    @include breakpoints.breakpoint(tablet) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.header-userInfos {
+  @extend %flex-align-center;
+  margin-right: 20px;
+  height: 100%;
+  width: 40%;
+  justify-content: flex-end;
+  margin-right: 30px;
+
+  img {
+    display: flex;
+    align-items: center;
+    margin-right: 1.3rem;
+  }
+
+  @include breakpoints.breakpoint(mobile) {
+    margin-right: 0;
+    img {
+      margin-right: 1rem;
+      // color: gainsboro;
+    }
+  }
+
+  &__modal {
+    display: none !important;
+    @include breakpoints.breakpoint(mobile) {
+      display: flex !important;
+    }
+  }
+
+  &__name {
+    padding-right: 10px;
+    cursor: pointer;
+  }
+}
+
+.search-input {
+  padding-left: 45px;
+  background: url("https://d2c0vv5h4nuw6w.cloudfront.net/icons/search.png")
+    no-repeat left;
+  background-size: 25px;
+  background-position: 10px;
+  border-color: transparent;
+  width: 90%;
+  height: 90%;
+  font-size: 1.3rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.popular-search {
+  margin-top: 30px;
+  display: flex;
+  div {
+    margin-right: 20px;
+    padding: 7px 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}

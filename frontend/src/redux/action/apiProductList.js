@@ -1,20 +1,44 @@
-import { updateStart, updateSuccess, updateFailed } from "../slices/productListSlice";
-import axios from 'axios';
+import {
+  updateProductStart,
+  updateProductSuccess,
+  updateProductFailed,
+  productListReset,
+} from "../slices/productListSlice";
+import axios from "axios";
+import { baseURL } from "../../lib/axiosAPI";
 
-
-const getProductList = async (dispatch) => {
-  dispatch(updateStart());
+export const getProductList = async (
+  dispatch,
+  search = "",
+  pageNumber = "",
+  sortBy = "",
+  inStockQuery = "",
+  categoryQuery = "",
+  brandQuery = "",
+  minPriceQuery = "",
+  maxPriceQuery = ""
+) => {
+  dispatch(productListReset());
+  dispatch(updateProductStart());
   try {
-    const result = await axios.get("http://localhost:5000/api/products")
-    dispatch(updateSuccess(result.data))
+    const result = await axios.get(
+      `${baseURL}/api/products?search=${search}&` +
+        `pageNumber=${pageNumber}&` +
+        `sortBy=${sortBy}&` +
+        `inStockQuery=${inStockQuery}&` +
+        `categoryQuery=${categoryQuery}&` +
+        `brandQuery=${brandQuery}&` +
+        `minPriceQuery=${minPriceQuery}&` +
+        `maxPriceQuery=${maxPriceQuery}`
+    );
+    dispatch(updateProductSuccess(result.data));
   } catch (error) {
     dispatch(
-      updateFailed(error.response && error.response.data.message?
-        error.response.data.message:
-        error.message
+      updateProductFailed(
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
       )
-    )
+    );
   }
-}
-
-export default getProductList;
+};

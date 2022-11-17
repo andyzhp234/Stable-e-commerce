@@ -1,38 +1,22 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const orderSlice = createSlice({
-  name: 'order',
+  name: "order",
   initialState: {
     order: null,
     pending: false,
     error: false,
-    errorMessage: '',
+    errorMessage: "",
     createSuccess: false,
   },
   reducers: {
-    orderCreateRequest: (state) => {
-      state.pending = true;
-    },
-    orderCreateSuccess: (state, action) => {
-      state.pending = false;
-      state.error = false;
-      state.createSuccess = true;
-      state.errorMessage = '';
-      state.order = action.payload;
-    },
-    orderCreateFailed: (state, action) => {
-      state.pending = false;
-      state.error = true;
-      state.createSuccess = false;
-      state.errorMessage = action.payload;
-    },
     getOrderDetailRequest: (state) => {
       state.pending = true;
     },
     getOrderDetailSuccess: (state, action) => {
       state.pending = false;
       state.error = false;
-      state.errorMessage = '';
+      state.errorMessage = "";
       state.order = action.payload;
     },
     getOrderDetailFailed: (state, action) => {
@@ -40,39 +24,21 @@ export const orderSlice = createSlice({
       state.error = true;
       state.errorMessage = action.payload;
     },
-
-    orderPayRequest: (state) => {
-      state.pending = true;
-    },
-    orderPaySuccess: (state, action) => {
+    orderReset: (state) => {
+      state.order = null;
       state.pending = false;
       state.error = false;
-      state.errorMessage = '';
-      state.order = action.payload;
+      state.errorMessage = "";
+      state.createSuccess = false;
     },
-    orderPayFailed: (state, action) => {
-      state.pending = false;
-      state.error = false;
-      state.errorMessage = '';
-      state.order = action.payload;
-    },
-    orderPayReset: (state) => {
-      // state.pending = true;
-    },
-  }
-})
-
+  },
+});
 
 export const {
-  orderCreateRequest,
-  orderCreateSuccess,
-  orderCreateFailed,
   getOrderDetailRequest,
   getOrderDetailSuccess,
   getOrderDetailFailed,
-  orderPayRequest,
-  orderPaySuccess,
-  orderPayFailed,
-  orderPayReset,
+  orderReset,
 } = orderSlice.actions;
+
 export default orderSlice.reducer;

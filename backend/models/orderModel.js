@@ -11,10 +11,10 @@ const orderSchema = mongoose.Schema({
       name: {type: String, required: true},
       qty: {type: Number, required: true},
       price: {type: Number, required: true},
-      image: {type: Array, required: false},
-      productID: {
+      image: {type: String, required: true},
+      _id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false,
+        required: true,
         ref: 'Product'
       }
     }
@@ -68,7 +68,7 @@ const orderSchema = mongoose.Schema({
   },
   orderPaymentID: {
     type: String,
-  }
+  },
 }, {
   timestamps: true,
 })

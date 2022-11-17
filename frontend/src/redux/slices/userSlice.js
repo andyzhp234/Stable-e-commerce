@@ -1,25 +1,34 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
-    userInfo: localStorage.getItem('userInfo')?
-      JSON.parse(localStorage.getItem('userInfo'))
-      :
-      null,
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
+      : null,
     pending: false,
     error: false,
-    errorMessage: '',
+    errorMessage: "",
     updateSuccess: false,
   },
   reducers: {
+    resetUserState: (state) => {
+      state.userInfo = localStorage.getItem("userInfo")
+        ? JSON.parse(localStorage.getItem("userInfo"))
+        : null;
+      state.pending = false;
+      state.error = false;
+      state.errorMessage = "";
+      state.updateSuccess = false;
+    },
+    userLogout: (state) => {
+      state.userInfo = null;
+    },
     loginRequest: (state) => {
       state.pending = true;
     },
     loginSuccess: (state, action) => {
       state.pending = false;
-      state.error = false;
-      state.errorMessage = '';
       state.userInfo = action.payload;
     },
     loginFailed: (state, action) => {
@@ -27,16 +36,11 @@ export const userSlice = createSlice({
       state.error = true;
       state.errorMessage = action.payload;
     },
-    userLogout: (state) => {
-      state.userInfo = null
-    },
     registerRequest: (state) => {
       state.pending = true;
     },
     registerSuccess: (state, action) => {
       state.pending = false;
-      state.error = false;
-      state.errorMessage = '';
       state.userInfo = action.payload;
     },
     registerFailed: (state, action) => {
@@ -49,21 +53,19 @@ export const userSlice = createSlice({
     },
     updateInfoSuccess: (state, action) => {
       state.pending = false;
-      state.error = false;
-      state.errorMessage = '';
       state.updateSuccess = true;
       state.userInfo = action.payload;
     },
     updateInfoFailed: (state, action) => {
       state.pending = false;
-      state.updateSuccess = false;
       state.error = true;
       state.errorMessage = action.payload;
     },
-  }
-})
+  },
+});
 
 export const {
+  resetUserState,
   loginRequest,
   loginSuccess,
   loginFailed,
@@ -75,4 +77,5 @@ export const {
   updateInfoSuccess,
   updateInfoFailed,
 } = userSlice.actions;
+
 export default userSlice.reducer;
