@@ -224,14 +224,14 @@ const createProduct = async (req, res) => {
     let images = [];
     for (let i = 0; i < req.files.length; i++) {
       const imageName = randomImageName();
-      // const params = {
-      //   Bucket: process.env.AWS_BUCKET_NAME,
-      //   Key: `images/${imageName}`,
-      //   Body: req.files[i].buffer,
-      //   ContentType: req.files[i].mimetype,
-      // };
-      // const command = new PutObjectCommand(params);
-      // await s3.send(command);
+      const params = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: `images/${imageName}`,
+        Body: req.files[i].buffer,
+        ContentType: req.files[i].mimetype,
+      };
+      const command = new PutObjectCommand(params);
+      await s3.send(command);
       images.push("https://d2c0vv5h4nuw6w.cloudfront.net/images/" + imageName);
     }
     const product = new Product({
