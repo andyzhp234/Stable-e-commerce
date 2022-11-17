@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseURL = "https://www.stable-store.com/";
+export const baseURL = "https://www.stable-store.com";
 
 export const getRecommendProducts = async () => {
   return await axios.get(`${baseURL}/api/products/recommend`);
