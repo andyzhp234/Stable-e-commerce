@@ -223,7 +223,6 @@ const createProduct = async (req, res) => {
   try {
     let images = [];
     for (let i = 0; i < req.files.length; i++) {
-      console.log(req.files[i].mimetype);
       const imageName = randomImageName();
       const params = {
         Bucket: process.env.AWS_BUCKET_NAME,
@@ -249,6 +248,7 @@ const createProduct = async (req, res) => {
       isNewArrival: req.body.newArrivals,
     });
     const createdProduct = await product.save();
+    await new Promise((r) => setTimeout(r, 5000));
     res.status(200).json(createdProduct);
   } catch (error) {
     res.status(404).json({ message: "Failed to Create Product" });

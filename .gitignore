@@ -11,6 +11,8 @@
 # production
 /frontend/build
 
+/backend/data/product-Images
+
 # misc
 .DS_Store
 .env.local
