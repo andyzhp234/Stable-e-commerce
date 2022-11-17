@@ -1,28 +1,39 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const productListSlice = createSlice({
-  name: 'productList',
+  name: "productList",
   initialState: {
-    productListInfo: [],
+    productListInfo: {},
     pending: false,
     error: false,
-    errorMessage: '',
+    errorMessage: "",
   },
   reducers: {
-    updateStart: (state) => {
+    updateProductStart: (state) => {
       state.pending = true;
     },
-    updateSuccess: (state, action) => {
+    updateProductSuccess: (state, action) => {
       state.pending = false;
-      state.productListInfo = action.payload
+      state.productListInfo = action.payload;
     },
-    updateFailed: (state, action) => {
+    updateProductFailed: (state, action) => {
       state.pending = false;
       state.error = true;
-      state.errorMessage = action.payload
-    }
-  }
-})
+      state.errorMessage = action.payload;
+    },
+    productListReset: (state) => {
+      state.productListInfo = {};
+      state.pending = false;
+      state.error = false;
+      state.errorMessage = "";
+    },
+  },
+});
 
-export const {updateStart, updateSuccess, updateFailed} = productListSlice.actions;
+export const {
+  updateProductStart,
+  updateProductSuccess,
+  updateProductFailed,
+  productListReset,
+} = productListSlice.actions;
 export default productListSlice.reducer;

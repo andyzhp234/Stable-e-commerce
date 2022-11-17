@@ -1,0 +1,26 @@
+.profile_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.user_orders {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user_orders_title {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}

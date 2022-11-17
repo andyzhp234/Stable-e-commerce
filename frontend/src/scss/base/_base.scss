@@ -1,0 +1,22 @@
+@use "../abstracts/colors";
+@use "./fonts";
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 370px;
+  font-family: fonts.$font-stack;
+  background-color: colors.$background-color;
+  color: colors.$text-color;
+}

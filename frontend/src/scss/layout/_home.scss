@@ -1,0 +1,163 @@
+@use "../abstracts/extendable";
+@use "../abstracts/breakpoints";
+
+.home {
+  width: 100%;
+  min-height: 90vh;
+  @extend %flex-align-center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.home__section1 {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+  &__description {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+
+    p {
+      margin: 0;
+      font-weight: 600;
+      font-size: 3rem;
+    }
+
+    .start-shopping-button {
+      @extend %flex-justify-center;
+      align-items: center;
+      margin-top: 20px;
+      width: 150px;
+      height: 40px;
+      border: 1px solid;
+      border-radius: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: black;
+        color: white;
+        border: none;
+      }
+    }
+  }
+
+  &__backgroundImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.home__section2 {
+  margin-top: 50px;
+  width: 95%;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__listings {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // gap: 40px;
+  }
+}
+
+.home__section3 {
+  @extend %flex-justify-center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 95%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__backgroundImg {
+    width: 50%;
+    height: 700px;
+    object-fit: cover;
+  }
+
+  &__about {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  &__description {
+    width: 90%;
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+}
+
+@include breakpoints.breakpoint(tablet) {
+  .home__section1 {
+    p {
+      font-size: 2rem;
+    }
+  }
+  .home__section2 {
+    &__listings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .home__section3 {
+    &__title {
+      font-size: 2rem;
+    }
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
+@include breakpoints.breakpoint(mobile) {
+  .home__section1 {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  .home__section2 {
+    &__listings {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+  .home__section3 {
+    flex-direction: column;
+    // img {
+    //   width: 100%;
+    //   height: 300px;
+    // }
+    &__backgroundImg {
+      width: 100%;
+      height: 300px;
+    }
+    &__about {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+}

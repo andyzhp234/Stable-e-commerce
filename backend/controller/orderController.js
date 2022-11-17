@@ -1,45 +1,24 @@
-import Order from '../models/orderModel.js'
+import Order from "../models/orderModel.js";
 
-
-// @desc    Create new Order
-// @route   POST /api/orders
+// @desc    Get All Orders
+// @route   GET /api/orders/myorders
 // @access  Private
-const addOrderItems = async (req, res) => {
+const getAllMyOrders = async (req, res) => {
+  const pageSize = 6;
+  const page = parseInt(req.query.pageNumber) || 1;
   try {
-    // adding Orders should be done by stripe webhook,
-    // this route is for manually adding orders.
-    const {
-      orderItems,
-      shippingAddress,
-      paymentMethod,
-      taxPrice,
-      shippingPrice,
-      subTotalPrice,
-      totalPrice,
-    } = req.body;
-  
-    if (orderItems && orderItems.length === 0) {
-      throw new Error('No order Items')
-    } else {
-      const order = new Order({
-        user: req.user._id,
-        orderItems,
-        shippingAddress,
-        paymentMethod,
-        taxPrice,
-        shippingPrice,
-        subTotalPrice,
-        totalPrice,
-      })
+    const count = await Order.countDocuments({ user: req.user._id });
+    const orders = await Order.find({
+      user: req.user._id,
+    })
+      .limit(pageSize)
+      .skip(pageSize * (page - 1));
 
-      const createdOrder = await order.save();
-      res.status(201).json(createdOrder)
-    }
+    res.json({ orders, page, pages: Math.ceil(count / pageSize) });
   } catch (error) {
-    res.status(400).json({message: error.message})
+    res.status(404).json({ message: error.message });
   }
-}
-
+};
 
 // @desc    Get Order By Id
 // @route   GET /api/orders/:id
@@ -47,44 +26,70 @@ const addOrderItems = async (req, res) => {
 const getOrderItems = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
-    if (order) {
-      res.json(order)
-    } else {
-      throw new Error('Order Not Found')
-    }
+    res.json(order);
   } catch (error) {
-    res.status(404).json({message: error.message})
+    res.status(404).json({ message: "Order Not Found" });
   }
-}
+};
 
+// @desc    Get All Orders
+// @route   GET /api/orders
+// @access  Private/Admin
+const getAllOrders = async (req, res) => {
+  const pageSize = 6;
+  const page = parseInt(req.query.pageNumber) || 1;
+  try {
+    const count = await Order.countDocuments({});
+    const orders = await Order.find({})
+      .limit(pageSize)
+      .skip(pageSize * (page - 1));
+    res.json({ orders, page, pages: Math.ceil(count / pageSize) });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
-// @desc    Update Order Payment Status
-// @route   PUT /api/orders/:id/pay
-// @access  Private 
-const updateOrderItemPayment = async (req, res) => {
+// @desc    Update an Order to Delivered
+// @route   Put /api/orders/:id/deliver
+// @access  Private/Admin
+const updateOrderToDelivered = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
     if (order) {
-      order.isPaid = true;
-      order.paidAt = Date.now()
-      order.paymentResult = {
-        id: req.body.id,
-        status: req.body.status,
-        update_time: req.body.update_time,
-        email_address: req.body.payer.email_address
-      }
-      const updatedOrder = await order.save()
-      res.json(updatedOrder)
+      order.isDelivered = req.body.isDelivered;
+      order.deliveredAt = Date.now();
+
+      const updatedOrder = await order.save();
+      res.json(updatedOrder);
     } else {
-      throw new Error('Update Payment Failed')
+      throw new Error("Order not found");
     }
   } catch (error) {
-    res.status(400).json({message: error.message})
+    res.status(404).json({ message: error.message });
   }
-}
+};
+
+// @desc    Delete an Order
+// @route   DELETE /api/orders/:id
+// @access  Private/Admin
+const deleteOrderById = async (req, res) => {
+  try {
+    const order = await Order.findById(req.params.id);
+    if (order) {
+      await order.remove();
+      res.json({ message: "Order Removed" });
+    } else {
+      throw new Error("Order not found");
+    }
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
 export {
-  addOrderItems,
   getOrderItems,
-  updateOrderItemPayment,
-}
+  getAllMyOrders,
+  getAllOrders,
+  updateOrderToDelivered,
+  deleteOrderById,
+};

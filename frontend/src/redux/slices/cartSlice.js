@@ -1,49 +1,36 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState: {
-    cartItems: localStorage.getItem('cartItems')?
-      JSON.parse(localStorage.getItem('cartItems'))
-      :[],
-    shippingAddress: localStorage.getItem('shippingAddress')?
-      JSON.parse(localStorage.getItem('shippingAddress'))
-      :{},
-    paymentMethod: localStorage.getItem('paymentMethod')?
-      JSON.parse(localStorage.getItem('paymentMethod'))
-      :null,
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : [],
   },
   reducers: {
     cartAddItem: (state, action) => {
-      let product = action.payload
-      const existItem = state.cartItems.find((prev) =>
-        product.productID === prev.productID
+      let product = action.payload;
+      const existItem = state.cartItems.find(
+        (prev) => product._id === prev._id
       );
       if (existItem) {
-        state.cartItems = state.cartItems.map((prev) => 
-          prev.productID === product.productID?
-            product:prev
-        )
+        state.cartItems = state.cartItems.map((prev) =>
+          prev._id === product._id ? product : prev
+        );
       } else {
-        state.cartItems = [...state.cartItems, product]
+        state.cartItems.push(product);
       }
     },
     cartDeleteItem: (state, action) => {
-      state.cartItems = state.cartItems.filter((product) => product.productID !== action.payload);
+      state.cartItems = state.cartItems.filter(
+        (product) => product._id !== action.payload
+      );
     },
-    cartSaveShippingAddress: (state, action) => {
-      state.shippingAddress = action.payload
+    cartDeleteAll: (state) => {
+      state.cartItems = [];
     },
-    cartSavePaymentMethod: (state, action) => {
-      state.paymentMethod = action.payload
-    },
-  }
-})
+  },
+});
 
-export const {
-  cartAddItem,
-  cartDeleteItem,
-  cartSaveShippingAddress,
-  cartSavePaymentMethod,
-} = cartSlice.actions;
+export const { cartAddItem, cartDeleteItem, cartDeleteAll } = cartSlice.actions;
 export default cartSlice.reducer;
