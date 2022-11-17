@@ -248,6 +248,7 @@ const createProduct = async (req, res) => {
       isNewArrival: req.body.newArrivals,
     });
     const createdProduct = await product.save();
+    await new Promise((r) => setTimeout(r, 5000));
     res.status(200).json(createdProduct);
   } catch (error) {
     res.status(404).json({ message: "Failed to Create Product" });
