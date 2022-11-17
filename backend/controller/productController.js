@@ -323,13 +323,12 @@ const updateProduct = async (req, res) => {
       product.isNewArrival = newArrivals;
 
       const updatedProduct = await product.save();
+      await new Promise((r) => setTimeout(r, 5000));
       res.status(201).json(updatedProduct);
     } else {
       throw new Error("Product not Found");
     }
-    res.status(200);
   } catch (error) {
-    console.log(error);
     res.status(404).json({ message: error.message });
   }
 };
