@@ -21,7 +21,7 @@ const stripeCheckOut = async (req, res) => {
           unit_amount: parseFloat(item.price),
         },
         quantity: item.qty,
-        // tax_rates: ["txr_1M5QYMASzu4JHJRJVO7M4Nma"],
+        tax_rates: ["txr_1M5U3JASzu4JHJRJUZ2jqb2M"],
       });
       metaDatas[`orderItems_${index}`] = JSON.stringify(item);
     });
@@ -37,11 +37,11 @@ const stripeCheckOut = async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ["US", "CA"],
       },
-      // shipping_options: [
-      //   { shipping_rate: "shr_1M5QZ0ASzu4JHJRJlfbgcIlv" },
-      //   { shipping_rate: "shr_1M5QZRASzu4JHJRJHltz6jDp" },
-      //   { shipping_rate: "shr_1M5QZrASzu4JHJRJVgYMzNcK" },
-      // ],
+      shipping_options: [
+        { shipping_rate: "shr_1M5U3aASzu4JHJRJbIkd0YTd" },
+        { shipping_rate: "shr_1M5U3xASzu4JHJRJkNjh3dS4" },
+        { shipping_rate: "shr_1M5U4HASzu4JHJRJeKKgwQ22" },
+      ],
       metadata: metaDatas,
     });
 
