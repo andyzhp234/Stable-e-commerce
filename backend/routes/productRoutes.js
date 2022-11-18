@@ -28,18 +28,18 @@ const upload = multer({ storage: storage });
 // admin routes
 router.post(
   "/",
+  upload.any("images"),
   protect,
   admin,
   declineDemo,
-  upload.any("images"),
   createProduct
 );
 router.put(
   "/:id",
+  upload.any("images"),
   protect,
   declineDemo,
   admin,
-  upload.any("images"),
   updateProduct
 );
 router.delete("/:id", protect, admin, declineDemo, deleteProductById);

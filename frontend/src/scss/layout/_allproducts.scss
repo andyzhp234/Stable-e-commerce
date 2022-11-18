@@ -149,6 +149,7 @@
 @include breakpoints.breakpoint(mobile) {
   .allproducts__products {
     &__grid {
+      padding: 0 10px;
       grid-template-columns: repeat(1, 1fr);
     }
   }

@@ -22,6 +22,7 @@ export default function AdminEditUser() {
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    setPending(true);
     adminGetUser(userInfo, params.id)
       .then(function (res) {
         setName(res.data.name);
@@ -41,6 +42,7 @@ export default function AdminEditUser() {
 
   const userUpdateHandler = async (e) => {
     e.preventDefault();
+    setPending(true);
     const body = {
       name: name,
       email: email,
@@ -49,8 +51,10 @@ export default function AdminEditUser() {
     adminUpdateUser(userInfo, params.id, body)
       .then(function (res) {
         setUpdateSuccess(true);
+        setPending(false);
       })
       .catch(function (error) {
+        setPending(false);
         if (error.response.status === 401) {
           dispatch(logout());
         } else {

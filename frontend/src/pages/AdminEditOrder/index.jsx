@@ -19,12 +19,15 @@ export default function AdminEditOrder() {
   let [order, setOrder] = React.useState();
 
   const updateOrder = (isDelivered) => {
+    setPending(true);
     adminUpdateOrder(userInfo, isDelivered, params.id)
       .then(function (res) {
         getOrder();
         setUpdateSuccess(true);
+        setPending(false);
       })
       .catch(function (error) {
+        setPending(false);
         if (error.response.status === 401) {
           dispatch(logout());
         } else {
