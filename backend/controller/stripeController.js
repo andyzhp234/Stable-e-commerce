@@ -21,7 +21,7 @@ const stripeCheckOut = async (req, res) => {
           unit_amount: parseFloat(item.price),
         },
         quantity: item.qty,
-        tax_rates: ["txr_1M5QYMASzu4JHJRJVO7M4Nma"],
+        // tax_rates: ["txr_1M5QYMASzu4JHJRJVO7M4Nma"],
       });
       metaDatas[`orderItems_${index}`] = JSON.stringify(item);
     });
@@ -37,11 +37,11 @@ const stripeCheckOut = async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ["US", "CA"],
       },
-      shipping_options: [
-        { shipping_rate: "shr_1M5QZ0ASzu4JHJRJlfbgcIlv" },
-        { shipping_rate: "shr_1M5QZRASzu4JHJRJHltz6jDp" },
-        { shipping_rate: "shr_1M5QZrASzu4JHJRJVgYMzNcK" },
-      ],
+      // shipping_options: [
+      //   { shipping_rate: "shr_1M5QZ0ASzu4JHJRJlfbgcIlv" },
+      //   { shipping_rate: "shr_1M5QZRASzu4JHJRJHltz6jDp" },
+      //   { shipping_rate: "shr_1M5QZrASzu4JHJRJVgYMzNcK" },
+      // ],
       metadata: metaDatas,
     });
 
@@ -100,11 +100,13 @@ const saveOrder = async (paymentIntent) => {
 // @route   POST /stripe/webhook
 // @access  Public
 const stripeWebHook = async (request, response) => {
+  const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
   const sig = request.headers["stripe-signature"];
+
   let event;
 
   try {
-    event = Stripe.webhooks.constructEvent(
+    event = stripe.webhooks.constructEvent(
       request.body,
       sig,
       process.env.STRIPE_ENDPOINT_SECRET
@@ -123,6 +125,7 @@ const stripeWebHook = async (request, response) => {
       response.status(400).send(`Error Saving Order: ${error.message}`);
     }
   }
+
   // Return a 200 response to acknowledge receipt of the event
   response.send();
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const baseURL = "https://www.stable-store.com";
-// export const baseURL = "http://localhost:5000";
+// export const baseURL = "https://www.stable-store.com";
+export const baseURL = "http://localhost:5000";
 
 export const getRecommendProducts = async () => {
   return await axios.get(`${baseURL}/api/products/recommend`);
