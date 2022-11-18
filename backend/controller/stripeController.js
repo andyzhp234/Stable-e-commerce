@@ -92,7 +92,6 @@ const saveOrder = async (paymentIntent) => {
     });
     await order.save();
   } catch (error) {
-    console.log(error.message);
     throw new Error(error.message);
   }
 };
