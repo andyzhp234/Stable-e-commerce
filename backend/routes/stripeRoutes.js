@@ -14,10 +14,6 @@ router.post(
   stripeCheckOut
 );
 
-router.post(
-  "/webhook",
-  express.raw({ type: "application/json" }),
-  stripeWebHook
-);
+router.post("/webhook", express.raw({ type: "*/*" }), stripeWebHook);
 
 export default router;
