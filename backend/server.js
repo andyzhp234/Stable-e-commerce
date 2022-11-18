@@ -18,7 +18,7 @@ const server = express();
 
 server.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://checkout.stripe.com"],
   })
 );
 
@@ -28,11 +28,11 @@ server.use("/stripe", stripeRoutes);
 // server.use(express.urlencoded({extended: false}));
 
 // parse request body to JSON format
-// server.use(express.json());
+server.use(express.json());
 
-server.use("/api/products", express.json(), productRoutes);
-server.use("/api/users", express.json(), userRoutes);
-server.use("/api/orders", express.json(), orderRoutes);
+server.use("/api/products", productRoutes);
+server.use("/api/users", userRoutes);
+server.use("/api/orders", orderRoutes);
 
 const __dirname = path.resolve();
 if (process.env.MODE === "production") {
