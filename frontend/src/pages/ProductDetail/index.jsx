@@ -8,6 +8,8 @@ import { logout } from "../../redux/action/apiUserAction";
 import { useNavigate } from "react-router-dom";
 import { addProductComment } from "../../lib/axiosAPI";
 import Meta from "../../components/Meta";
+import DisplayPending from "../../components/DisplayPending";
+import Alert from "@mui/material/Alert";
 
 export default function ProductPage() {
   const navigate = useNavigate();
@@ -72,9 +74,9 @@ export default function ProductPage() {
     <div>
       <Meta title={productInfo.name} />
       {pending ? (
-        <div style={{ height: "90vh" }}>Loading</div>
+        <DisplayPending pending={pending} />
       ) : error ? (
-        <div style={{ height: "90vh" }}>{errorMessage}</div>
+        <Alert severity="error">{errorMessage}</Alert>
       ) : (
         <div className="productPage">
           <img

@@ -45,6 +45,7 @@ export default function Category() {
         categoryQuery = categoryQuery + `${i}_`;
       }
     }
+
     if (categoryQuery === "") {
       searchParams.delete("category");
     } else {

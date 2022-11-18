@@ -54,6 +54,7 @@ export default function AdminEditProduct() {
   const updateProductHandler = async (e) => {
     e.preventDefault();
     window.scrollTo(0, 0);
+    setPending(true);
     const formData = new FormData();
 
     for (let i = 0; i < img.length; i++) {
@@ -72,8 +73,10 @@ export default function AdminEditProduct() {
     adminUpdateProduct(userInfo, params.id, formData)
       .then(function (res) {
         setCreateSuccess(true);
+        setPending(false);
       })
       .catch(function (error) {
+        setPending(false);
         if (error.response.status === 401) {
           dispatch(logout());
         } else {

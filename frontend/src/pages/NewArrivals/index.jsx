@@ -51,7 +51,9 @@ export default function NewArrivals() {
                   placeholderSrc={item.images[0]}
                 />
                 <div className="productCard_home__title">{item.name}</div>
-                <div className="productCard_home__price">$ {item.price}</div>
+                <div className="productCard_home__price">
+                  $ {item.price / 100}
+                </div>
               </div>
             );
           })}
