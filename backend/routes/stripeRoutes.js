@@ -4,7 +4,6 @@ import {
   stripeWebHook,
 } from "../controller/stripeController.js";
 import { protect } from "../middleware/authMiddleware.js";
-import bodyParser from "body-parser";
 
 const router = express.Router();
 
@@ -17,7 +16,7 @@ router.post(
 
 router.post(
   "/webhook",
-  bodyParser.raw({ type: "application/json" }),
+  express.raw({ type: "application/json" }),
   stripeWebHook
 );
 
