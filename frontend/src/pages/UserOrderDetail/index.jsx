@@ -13,6 +13,7 @@ export default function OrderDetailPage() {
   const { order, pending, error, errorMessage } = orderDetail;
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(getOrderDetail(params.id));
   }, [dispatch, params.id]);
 
