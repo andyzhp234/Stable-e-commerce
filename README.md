@@ -16,7 +16,7 @@ I have decided to develop an eCommerce site because I love shopping online, and 
 
 Unlike eCommerce websites like Amazon, eBay, or Walmart, which sells almost everything, this eCommerce web app specializes in selling furniture because I want to focus on a particular industry and make the website one of the best in that industry.
 
-Due to copyright, there aren't many good product images you can find online for free; however, I was able to find many high-quality furniture product images at pexels.com and unsplash.com, which was the main reason why I decided to develop an eCommerce store that sells furniture.
+Due to copyright, there aren't many good product images you can find online for free; however, I was able to find many high-quality furniture product images at pexels.com and unsplash.com.
 
 I put a lot of effort into it and I hope that you could like it.
 
@@ -30,7 +30,34 @@ You can try the demo here
 
 ## Documents
 
-<a href="https://github.com/andyzhp234/stable-e-commerce-web" >System Design Documents</a>
+<a href="https://github.com/andyzhp234/stable-e-commerce-web/blob/main/design-doc/design-doc.md" >System Design Documents</a>
+
+## Screenshots
+
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-recommend.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-about.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/footer.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-newArrivals.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-allProduct.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-productDetail.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-productDetail-1.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-orderDetail.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminUserList.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminProductList.PNG)
+<br/>
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminOrderList.PNG)
+<br/>
 
 ## Features
 
@@ -70,9 +97,29 @@ You can try the demo here
 | [AWS S3 Storage Bucket](https://aws.amazon.com/s3/)            | AWS services that provides an object storage service offering industry-leading scalability, data availability, security, and performance |
 | [AWS CloudFront CDN](https://aws.amazon.com/cloudfront/)       | AWS services that provides content delivery network (CDN) service                                                                        |
 | [Heroku](https://www.heroku.com/home)                          | A Cloud Platform (PaaS) to deploy my Full stack Application                                                                              |
+| [Google Domain](https://domains.google/)                       | A domain name registrar operated by Google.                                                                                              |
 
-## Screenshots
+### Dev Tools
+
+| Technologies       | Description                                                               |
+| ------------------ | ------------------------------------------------------------------------- |
+| Visual Studio Code | Code Editor                                                               |
+| Postman            | API platform for developers to design, build, test and iterate their APIs |
+| Lucidchart         | Sketch System Design flowchart diagrams                                   |
 
 ## Potential Improvements
 
+- Adding Refresh Token For Better User Experiences
+- Use Redis for cache
+- Use Elasticsearch for product search
+- Deploy to Aws
+- Use Nginx and Docker
+- User Authentication using Google / Facebook / OAuth
+
 ## What I Learned
+
+- JWT vs Session (cookies)
+- Stripe as Payment Gateways
+- AWS Services
+- CDN
+- Sass

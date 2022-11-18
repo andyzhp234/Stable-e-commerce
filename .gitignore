@@ -12,6 +12,7 @@
 /frontend/build
 
 /backend/data/product-Images
+/backend/data/web-screenshots
 
 # misc
 .DS_Store
