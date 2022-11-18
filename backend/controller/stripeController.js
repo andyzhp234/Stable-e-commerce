@@ -102,7 +102,7 @@ const saveOrder = async (paymentIntent) => {
 const stripeWebHook = async (request, response) => {
   const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
   const sig = request.headers["stripe-signature"];
-
+  console.log(sig);
   let event;
 
   try {
