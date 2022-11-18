@@ -7,14 +7,14 @@ import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import stripeRoutes from "./routes/stripeRoutes.js";
-// import enforce from "express-sslify";
+import enforce from "express-sslify";
 
 // Configured .env file and Connect to MongoDB Altas
 dotenv.config();
 connectDB();
 
 const server = express();
-// server.use(enforce.HTTPS({ trustProtoHeader: true }));
+server.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 server.use(
   cors({

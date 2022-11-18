@@ -18,7 +18,8 @@ export default function CompanyInfo() {
             Icons from <a href="https://icons8.com">icons8.com</a>
           </div>
           <div>
-            Images from <a href="https://www.pexels.com">www.pexels.com</a>
+            Images from <a href="https://www.pexels.com">www.pexels.com</a> and{" "}
+            <a href="https://unsplash.com/">unsplash.com</a>
           </div>
         </div>
       </div>
