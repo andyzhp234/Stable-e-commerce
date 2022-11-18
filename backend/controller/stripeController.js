@@ -103,7 +103,6 @@ const stripeWebHook = async (request, response) => {
   const stripe = new Stripe(process.env.STRIPE_PRIVATE_KEY);
   const sig = request.headers["stripe-signature"];
   let event;
-  console.log(request.body);
   try {
     event = stripe.webhooks.constructEvent(
       request.body,
