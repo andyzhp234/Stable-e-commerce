@@ -116,7 +116,7 @@ You can try the demo here
 | [React.js](https://reactjs.org/)                                                                                  | Javascript Library for building user interfaces                                                    |
 | [React Hooks](https://reactjs.org/docs/hooks-intro.html)                                                          | New addition in React 16.8 that let you use state and other React features without writing a class |
 | [React Router v6.4.2](https://reactrouter.com/en/main)                                                            | Javascript standard library for routing in React                                                   |
-| [React-helmet](https://www.themoviedb.org/)                                                                       | Node.js packages that Manage all of your changes to the document head                              |
+| [React-helmet](https://www.npmjs.com/package/react-helmet)                                                        | Node.js packages that Manage all of your changes to the document head                              |
 | [React-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)                  | Node.js packages that lazy load images and other React components/elements.                        |
 | [Axios](https://www.npmjs.com/package/axios)                                                                      | Node.js packages that implements the Promise API and used to make HTTP Requests                    |
 | [Redux.js](https://redux.js.org/)                                                                                 | An open-source JavaScript library for managing and centralizing application state.                 |
@@ -135,7 +135,7 @@ You can try the demo here
 | [Express-sslify](https://www.npmjs.com/package/express-sslify) | Node.js packages that enforces HTTPS connections on any incoming GET and HEAD requests                                                   |
 | [Multer](https://www.npmjs.com/package/multer)                 | Node.js packages that handles multipart/form-data                                                                                        |
 | [Dotenv](https://www.npmjs.com/package/dotenv)                 | Node.js packages that loads environment variables from .env file into process.env                                                        |
-| [Cors](https://www.themoviedb.org/)                            | Node.js packages that can be used to enable CORS with various options                                                                    |
+| [Cors](https://www.npmjs.com/package/cors)                     | Node.js packages that can be used to enable CORS with various options                                                                    |
 | [Bcrypt.js](https://www.npmjs.com/package/bcryptjs)            | Node.js packages that enables storing of passwords as hashed passwords instead of plaintext                                              |
 | [Mongoose.js](https://mongoosejs.com/docs/)                    | A Node.js-based Object Data Modeling (ODM) library for MongoDB                                                                           |
 | [MongoDB Atlas](https://www.mongodb.com/atlas/database)        | A free cloud service to store MongoDB collections                                                                                        |
