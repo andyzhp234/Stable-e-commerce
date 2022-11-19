@@ -2,7 +2,7 @@
 <br>
 <a  href="https://www.stable-store.com"><img  src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/brand-logo-1.PNG"  alt="Markdownify"  width="200"></a>
 <br>
-Furniture Ecommerce Web Apps
+Furniture eCommerce Web Apps
 <br>
 </h1>
 <h4  align="left"><a  href="https://www.stable-store.com">Stable</a> is a React and Node.js based eCommerce web app built using React, Express, Node.js, and MongoDB
@@ -37,7 +37,7 @@ You can try the demo here
 ## Some Screenshots
 
 **Home**
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home.png)
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-1.png)
 
 <br/>
 
