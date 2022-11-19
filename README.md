@@ -71,6 +71,42 @@ You can try the demo here
 
 ## Features
 
+- Responsive Layout
+- User Sign up & User Authentication and Authorization
+- Display Recommend Products on home page
+- Display New Arrivals Products
+- Display All Products
+- Sort Products by Price and Rating
+- Filter Products by Availability, Category, Brand, and Price
+- Search Products by name, category, brand, and description
+- Product Detail Page
+  - Product Image slider
+  - Add Product to Shopping Cart
+  - Logged in User/Admin can Leave Comments with Rating
+  - Display All Reviews
+- Shopping Cart
+  - User able to change product quantity within shopping cart page
+  - User able to delete product
+- Admin can view All Registered Users & Admins
+  - Admin is able to update users profile
+  - Admin is able to promote a user to be admin
+  - Admin is able to delete user
+- Admin can view All Products
+  - Admin is able to create a new Product
+  - Admin is able to delete a Product
+  - Admin is able to update a Product
+- Admin can View All Orders
+  - Admin can mark an order as delivered
+- User/Admin can update their profile
+- Frontend & Backend Paginations
+- Loading backdrop to signal state change
+- React-hemet to dynamically change head and meta tag
+- Scroll animations for better user experiences
+- Lazy Load Image to improve the page's loading time
+- Loading skeletons
+- All Product Images are store in AWS S3 Private Bucket and
+- AWS CloudFront CDN in front of AWS S3 to increase performance by delivering content (images) faster and HTTPs for S3 Images
+
 ## Technologies
 
 ### Frontend
@@ -121,7 +157,7 @@ You can try the demo here
 
 - Adding Refresh Token for Better User Experiences
 - Use Redis for cache
-- Use Elasticsearch for product search
+- Use Elastic Search for product search
 - Deploy to Aws
 - Use Nginx and Docker
 - Consider Load Balancer
@@ -131,6 +167,5 @@ You can try the demo here
 
 - JWT vs Session (cookies)
 - How to use Stripe as Payment Gateways
-- AWS Services such as S3 and Cloud Front
-- CDN
+- AWS S3 and CloudFront CDN
 - Sass
