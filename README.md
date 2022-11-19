@@ -162,6 +162,8 @@ You can try the demo here
 - Use Nginx and Docker
 - Consider Load Balancer
 - User Authentication using Google / Facebook / OAuth
+- Cypress Test
+- Jest Unit Test
 
 ## What I Learned
 
