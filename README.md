@@ -80,21 +80,21 @@ You can try the demo here
 - Filter Products by Availability, Category, Brand, and Price
 - Search Products by name, category, brand, and description
 - Product Detail Page
-  - Product Image slider
-  - Add Product to Shopping Cart
-  - Logged in User/Admin can Leave Comments with Rating
-  - Display All Reviews
+  - Product image slider
+  - Add product to shopping cart
+  - Logged in User/Admin can leave comments with rating
+  - Display all reviews
 - Shopping Cart
   - User able to change product quantity within shopping cart page
   - User able to delete product
-- Admin can view All Registered Users & Admins
+- Admin can view all registered users & admins
   - Admin is able to update users profile
   - Admin is able to promote a user to be admin
   - Admin is able to delete user
-- Admin can view All Products
-  - Admin is able to create a new Product
-  - Admin is able to delete a Product
-  - Admin is able to update a Product
+- Admin can view all products
+  - Admin is able to create a new product
+  - Admin is able to delete a product
+  - Admin is able to update a product
 - Admin can View All Orders
   - Admin can mark an order as delivered
 - User/Admin can update their profile
@@ -104,7 +104,7 @@ You can try the demo here
 - Scroll animations for better user experiences
 - Lazy Load Image to improve the page's loading time
 - Loading skeletons
-- All Product Images are store in AWS S3 Private Bucket and
+- All Product Images are store in AWS S3 Private Bucket
 - AWS CloudFront CDN in front of AWS S3 to increase performance by delivering content (images) faster and HTTPs for S3 Images
 
 ## Technologies
