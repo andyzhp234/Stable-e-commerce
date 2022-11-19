@@ -32,32 +32,42 @@ You can try the demo here
 
 <a href="https://github.com/andyzhp234/stable-e-commerce-web/blob/main/design-doc/design-doc.md" >System Design Documents</a>
 
-## Screenshots
+## Videos
 
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home.PNG)
+## Some Screenshots
+
+**Home**
+![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-recommend.PNG)
+
+**All Product**
+![Desktop-All Product](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-allProduct.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-about.PNG)
+
+**Shopping Cart**
+![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-shoppingCart.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/footer.PNG)
+
+**Search**
+![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-search.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-newArrivals.PNG)
+
+**User Order List**
+![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-orderList.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-allProduct.PNG)
+
+**Login**
+![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-login.png)
+
 <br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-productDetail.PNG)
-<br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-productDetail-1.PNG)
-<br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-orderDetail.PNG)
-<br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminUserList.PNG)
-<br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminProductList.PNG)
-<br/>
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-adminOrderList.PNG)
-<br/>
+
+**Admin Product Lists**
+![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-admin-productList.png)
 
 ## Features
 
@@ -109,17 +119,18 @@ You can try the demo here
 
 ## Potential Improvements
 
-- Adding Refresh Token For Better User Experiences
+- Adding Refresh Token for Better User Experiences
 - Use Redis for cache
 - Use Elasticsearch for product search
 - Deploy to Aws
 - Use Nginx and Docker
+- Consider Load Balancer
 - User Authentication using Google / Facebook / OAuth
 
 ## What I Learned
 
 - JWT vs Session (cookies)
-- Stripe as Payment Gateways
-- AWS Services
+- How to use Stripe as Payment Gateways
+- AWS Services such as S3 and Cloud Front
 - CDN
 - Sass
