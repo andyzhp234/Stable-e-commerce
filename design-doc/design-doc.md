@@ -3,23 +3,21 @@
 # Stable (furniture eCommerce)
 
 Author: Haopeng Zeng
+
 Date: 11/19/2022 (Updated)
 
 # Table of Contents
-
 1.  <a href="#overview">Overview</a>
 2.  <a href="#project-specifications">Project Specifications</a>
-    2.1 <a href="#features"> Features </a>
-    2.2 <a href="#audience"> Audience </a>
-    2.3 <a href="#user-stories"> User Stories </a>
+    * <a href="#features"> Features </a>
+    * <a href="#user-stories"> User Stories </a>
 3.  <a href="#architecture-and-organization">Architecture and Organization</a>
-    3.1. <a href="#system-overview">System Overview </a>
-    3.2. <a href="#frontend-routes"> Frontend Routes </a>
-    3.3. <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
-    3.4. <a href="#data-schemas"> Data Schemas </a>
-    3.5. <a href="#deployment"> Deployment </a>
-    3.6. <a href="#third-party-libraries"> Third-Party Libraries </a>
-    3.7. <a href="#service-dependencies"> Service Dependencies (Third-Parties APIs?) </a>
+    * <a href="#system-overview">System Overview </a>
+    * <a href="#frontend-routes"> Frontend Routes </a>
+    * <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
+    * <a href="#data-schemas"> Data Schemas </a>
+    * <a href="#deployment"> Deployment </a>
+    * <a href="#service-dependencies"> Service Dependencies </a>
 4.  <a href="#design-considerations">Design Considerations</a>
 
 # Overview
@@ -242,7 +240,7 @@ Database deployed to MongoDB Atlas
 Images deployed to AWS S3
 Domain Registered to Google Domain
 
-## Service Dependencies (Third-Parties APIs)
+## Service Dependencies
 
 | Dependency name    | Why it is needed                                                        |
 | ------------------ | ----------------------------------------------------------------------- |
@@ -267,7 +265,8 @@ Domain Registered to Google Domain
 ## Challenges Face
 
 - Learning how to use CSS Preprocessor (Sass).
-- Learning
+- Learning how to use payment gateway (Stripe).
+- Learning how to use AWS S3 & CloudFront & IAM.
 
 ## Interesting and noteworthy bugs encoutered during the development
 
