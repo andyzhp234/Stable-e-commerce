@@ -239,8 +239,11 @@ eCommerce is a website that contains a bunch of listings for products. By buildi
 ## Deployment
 
 Server is currently deployed to Heroku but I am thinking about deploying it to AWS in the future.
-Database deployed to MongoDB Atlas
-Images deployed to AWS S3
+
+MongoDB Atlas for database.
+
+AWS S3 for images hosting.
+
 Domain Registered to Google Domain
 
 ## Service Dependencies
