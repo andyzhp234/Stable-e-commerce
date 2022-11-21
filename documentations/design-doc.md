@@ -13,6 +13,7 @@ Date: 11/19/2022 (Updated)
     * <a href="#user-stories"> User Stories </a>
 3.  <a href="#architecture-and-organization">Architecture and Organization</a>
     * <a href="#system-overview">System Overview </a>
+    * <a href="#middleware"> Middleware </a>
     * <a href="#frontend-routes"> Frontend Routes </a>
     * <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
     * <a href="#data-schemas"> Data Schemas </a>
@@ -113,6 +114,7 @@ eCommerce is a website that contains a bunch of listings for products. By buildi
 <img src="./images/architecture-diagram.png" />
 <img src="./images/user-flowchart.png" />
 
+## Middleware
 
 ## Frontend Routes
 
@@ -239,8 +241,11 @@ eCommerce is a website that contains a bunch of listings for products. By buildi
 ## Deployment
 
 Server is currently deployed to Heroku but I am thinking about deploying it to AWS in the future.
-Database deployed to MongoDB Atlas
-Images deployed to AWS S3
+
+MongoDB Atlas for database.
+
+AWS S3 for images hosting.
+
 Domain Registered to Google Domain
 
 ## Service Dependencies
@@ -261,9 +266,11 @@ Domain Registered to Google Domain
 
 #### Database: Relational (MySQL, PostgreSQL) vs Non-relational (MongoDB)
 
-#### Redux VS React Context
+#### Redux Vs React Context
 
 #### Redux Vs Redux Toolkits
+
+#### REST Vs GraphQL
 
 ## Challenges Face
 
