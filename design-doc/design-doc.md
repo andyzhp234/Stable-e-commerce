@@ -113,6 +113,7 @@ eCommerce is a website that contains a bunch of listings for products. By buildi
 <img src="./images/architecture-diagram.png" />
 <img src="./images/user-flowchart.png" />
 
+## Middleware
 
 ## Frontend Routes
 
