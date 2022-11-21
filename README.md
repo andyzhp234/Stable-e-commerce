@@ -164,6 +164,8 @@ You can try the demo here
 - User Authentication using Google / Facebook / OAuth
 - Cypress Test
 - Jest Unit Test
+- Improve SEO
+- Track Visitors & Analytics
 
 ## What I Learned
 
