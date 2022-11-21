@@ -13,6 +13,7 @@ Date: 11/19/2022 (Updated)
     * <a href="#user-stories"> User Stories </a>
 3.  <a href="#architecture-and-organization">Architecture and Organization</a>
     * <a href="#system-overview">System Overview </a>
+    * <a href="#middleware"> Middleware </a>
     * <a href="#frontend-routes"> Frontend Routes </a>
     * <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
     * <a href="#data-schemas"> Data Schemas </a>
