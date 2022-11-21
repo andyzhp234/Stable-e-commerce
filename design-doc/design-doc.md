@@ -262,7 +262,7 @@ Domain Registered to Google Domain
 
 #### Redux VS React Context
 
-#### Redux Vs Redux Toolkit
+#### Redux Vs Redux Toolkits
 
 ## Challenges Face
 
