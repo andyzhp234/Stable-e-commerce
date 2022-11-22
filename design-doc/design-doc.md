@@ -266,9 +266,11 @@ Domain Registered to Google Domain
 
 #### Database: Relational (MySQL, PostgreSQL) vs Non-relational (MongoDB)
 
-#### Redux VS React Context
+#### Redux Vs React Context
 
 #### Redux Vs Redux Toolkits
+
+#### REST Vs GraphQL
 
 ## Challenges Face
 
