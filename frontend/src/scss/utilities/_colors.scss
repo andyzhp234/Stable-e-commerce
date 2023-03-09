@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+// Example Output: .color-red-100 { color: rgb(0 77 102) }
+@each $color, $color-map in $colors {
+  @each $darkness, $value in $color-map {
+    .color-#{$color}-#{$darkness} {
+      color: $value;
+    }
+    .bg-#{$color}-#{$darkness} {
+      background-color: $value;
+    }
+  }
+}
