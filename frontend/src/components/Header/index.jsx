@@ -1,6 +1,6 @@
 import React from "react";
-import NavPage from "./components/NavPage";
-import NavOthers from "./components/NavOthers";
+import NavPage from "./NavPage";
+import NavOthers from "./NavOthers";
 
 export default function Header() {
   return (

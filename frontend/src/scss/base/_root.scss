@@ -1,23 +1,10 @@
 @use "../abstracts/colors";
-@use "./fonts";
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
 
 body {
   margin: 0;
   padding: 0;
   min-width: 370px;
-  font-family: fonts.$font-stack;
+  // font-family: fonts.$font-stack;
   background-color: colors.$background-color;
   color: colors.$text-color;
 }

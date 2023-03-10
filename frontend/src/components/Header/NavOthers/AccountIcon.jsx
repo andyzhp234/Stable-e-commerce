@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import IconAccount from "../../../../assets/account.png";
-import { logout } from "../../../../redux/action/apiUserAction";
+import { logout } from "../../../redux/action/apiUserAction";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 

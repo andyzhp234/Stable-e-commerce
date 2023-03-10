@@ -74,7 +74,7 @@
     }
 
     input {
-      font-family: fonts.$font-stack;
+      // font-family: fonts.$font-stack;
       width: 90%;
       max-width: 400px;
       height: 50px;
@@ -90,7 +90,7 @@
       height: 30px;
       width: 100px;
       font-weight: 600;
-      font-family: fonts.$font-stack;
+      // font-family: fonts.$font-stack;
       cursor: pointer;
     }
   }
