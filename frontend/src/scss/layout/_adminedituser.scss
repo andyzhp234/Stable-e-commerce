@@ -1,0 +1,21 @@
+.admin_edit_user__isadmin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 85%;
+  display: flex;
+  align-items: center;
+
+  label {
+    font-size: 1rem;
+  }
+  input {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 20px;
+    justify-content: flex-end;
+  }
+}

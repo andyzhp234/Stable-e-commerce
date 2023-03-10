@@ -1,0 +1,69 @@
+@use "../abstracts/extendable";
+@use "../abstracts/breakpoints";
+
+.newarrivals {
+  width: 100%;
+  min-height: 100vh;
+  @extend %flex-justify-center;
+}
+
+.newarrivals__container {
+  width: 90%;
+  height: 100%;
+}
+
+.newarrivals__title {
+  width: 100%;
+  height: 450px;
+  @extend %flex-justify-center;
+  align-items: center;
+  color: blanchedalmond;
+  font-size: 8rem;
+  font-weight: 700;
+  padding-bottom: 40px;
+  border-bottom: 1px solid gainsboro;
+
+  div {
+    position: absolute;
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.newarrivals__listings {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &__product {
+    width: 100%;
+    height: 500px;
+    background-color: red;
+  }
+}
+
+@include breakpoints.breakpoint(tablet) {
+  .newarrivals__title {
+    font-size: 6rem;
+  }
+  .newarrivals__listings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include breakpoints.breakpoint(mobile) {
+  .newarrivals__title {
+    font-size: 3rem;
+    height: 300px;
+  }
+  .newarrivals__listings {
+    grid-template-columns: 1fr;
+  }
+}
