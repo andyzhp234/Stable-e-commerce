@@ -2,11 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/action/apiUserAction";
 import { useSearchParams } from "react-router-dom";
-import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 import Meta from "../../components/Meta";
 import DisplayPending from "../../components/DisplayPending";
 import Alert from "@mui/material/Alert";
+import CustomDivider from "../../components/CustomDivider";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -45,60 +45,60 @@ export default function LoginPage() {
     e.preventDefault();
     dispatch(login("admin@example.com", "123456"));
   }
+
   return (
-    <div className="login_container">
+    <div className="auth">
       <Meta title="Login" />
       <DisplayPending pending={pending} />
-
-      <form className="login_input_container" onSubmit={handleLogin}>
+      <Alert severity="warning" style={{ width: "100%", marginBottom: "20px" }}>
+        <strong>Pay attention:</strong> This is not a real e-commerce site. You
+        don't need to insert your real credentials (email / password) here!
+      </Alert>
+      <form className="auth__container" onSubmit={handleLogin}>
         {error ? <Alert severity="error">{errorMessage}</Alert> : null}
-        <div className="login_input_container__title">Sign In to Stable</div>
-        <input
-          placeholder="Email Address"
-          id="email"
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          placeholder="Password"
-          id="password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Sign In</button>
+        <div className="auth__title">Welcome back!</div>
+        <div className="auth__input__container">
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="auth__input__container">
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button className="auth-button " type="submit">
+          Log In
+        </button>
+        <CustomDivider text={"OR"} />
         <button
+          className="auth-button white-button"
           type="button"
-          style={{
-            backgroundColor: "#5B5B5B",
-          }}
           onClick={demoUserHandler}
         >
-          Demo User
+          Continue with demo user
         </button>
         <button
+          className="auth-button white-button"
           type="button"
-          style={{
-            backgroundColor: "#7C7C7C",
-          }}
           onClick={demoAdminHandler}
         >
-          Demo Admin
+          Continue with demo admin
         </button>
-
-        <div className="no_account_divider">
-          <Divider style={{ width: "25%", backgroundColor: "black" }} />
-          <div>Don't have an Account?</div>
-          <Divider style={{ width: "25%", backgroundColor: "black" }} />
-        </div>
-        <button
-          id="create_account_button"
-          onClick={(e) => navigate(`/register?redirect=${redirect}`)}
-          type="button"
-        >
-          Create an Account
-        </button>
+        <h1 className="auth__navigation">
+          Need an account?{" "}
+          <span onClick={(e) => navigate(`/register?redirect=${redirect}`)}>
+            Register
+          </span>
+        </h1>
       </form>
     </div>
   );

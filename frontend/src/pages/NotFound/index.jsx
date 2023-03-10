@@ -9,10 +9,7 @@ export default function NotFound() {
       <div className="not_found_container__description">
         Sorry, Page not Found
       </div>
-      <div
-        className="not_found_container__backToHome"
-        onClick={() => navigate("/")}
-      >
+      <div className="black-rounded-button" onClick={() => navigate("/")}>
         Back to Home
       </div>
     </div>

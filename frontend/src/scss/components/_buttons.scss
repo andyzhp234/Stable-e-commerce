@@ -1,0 +1,111 @@
+@use "../abstracts/" as *;
+
+.auth-button {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  color: $colors-white;
+  background-color: color("blue", 600);
+  font-size: small;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: color("blue", 700);
+  }
+}
+
+.white-button {
+  border: 1px solid $colors-black;
+  color: $colors-black;
+  background-color: $colors-white;
+
+  &:hover {
+    color: $colors-white;
+    background-color: $colors-black;
+  }
+}
+
+.green-button {
+  color: $colors-white;
+  background-color: color("green", 500);
+
+  &:hover {
+    background-color: color("green", 600);
+  }
+}
+
+.fit-button {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid black;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $colors-black;
+    color: $colors-white;
+  }
+}
+
+.addCount-button {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 140px;
+  font-size: larger;
+
+  img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+}
+
+.black-rounded-button {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $colors-white;
+  background-color: $colors-black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.mark-delivery-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: fit-content;
+
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 10px;
+
+  color: $colors-white;
+  background-color: color("green", 500);
+  cursor: pointer;
+}
+
+.red-button {
+  color: $colors-white;
+  background-color: color("red", 500);
+
+  &:hover {
+    background-color: color("red", 600);
+  }
+}

@@ -53,11 +53,7 @@ export default function Sort() {
           alignItems: "flex-end",
         }}
       >
-        <div
-          className="filter-modal"
-          data-aos="fade-down"
-          data-aos-duration="700"
-        >
+        <div className="filter-modal">
           <div className="filter-modal__container">
             <img
               style={{

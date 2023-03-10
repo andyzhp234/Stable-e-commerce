@@ -78,7 +78,7 @@ export default function AdminEditOrder() {
       <DisplayPending pending={pending} />
       <div className="order-detail__container">
         <div
-          className="admin-create-product__go-back"
+          className="black-rounded-button"
           style={{ margin: "0", marginTop: "20px" }}
           onClick={() => navigate("/admin/orderlist")}
         >
@@ -143,12 +143,14 @@ export default function AdminEditOrder() {
           ) : (
             <div style={{ color: "red" }}>On the Way</div>
           )}
-          <div className="mark-delivered" onClick={deliveredHandler}>
+          <div
+            className="mark-delivery-button fs-400"
+            onClick={deliveredHandler}
+          >
             Mark As Delivered
           </div>
           <div
-            className="mark-delivered"
-            style={{ color: "white", backgroundColor: "#960200" }}
+            className="mark-delivery-button red-button fs-400"
             onClick={notDeliveredHandler}
           >
             Mark As Not Delivered

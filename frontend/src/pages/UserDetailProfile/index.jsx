@@ -48,14 +48,10 @@ export default function ProfilePage() {
   }, [navigate, dispatch, userInfo, error, errorMessage]);
 
   return (
-    <div className="profile_container">
+    <div className="auth">
       <Meta title="Profile" />
       <DisplayPending pending={pending} />
-      <form
-        className="signup_input_container"
-        style={{ marginTop: "40px" }}
-        onSubmit={userUpdateHandler}
-      >
+      <form className="auth__container" onSubmit={userUpdateHandler}>
         {message ? (
           <Alert severity="error">{message}</Alert>
         ) : error ? (
@@ -63,53 +59,61 @@ export default function ProfilePage() {
         ) : updateSuccess ? (
           <Alert severity="success">Update Success!</Alert>
         ) : null}
-        <div className="signup_title">User Profile</div>
-        <label className="signup_label" htmlFor="register_name">
-          Name
-        </label>
-        <input
-          id="register_name"
-          placeholder="Enter name"
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          required
-        />
 
-        <label className="signup_label" htmlFor="register_email">
-          Email Address
-        </label>
-        <input
-          id="register_email"
-          placeholder="Enter email"
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          required
-        />
+        <div className="auth__title">User Profile</div>
 
-        <label className="signup_label" htmlFor="register_password">
-          Password
-        </label>
-        <input
-          id="register_password"
-          placeholder="Enter password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+        <div className="auth__input__container">
+          <label htmlFor="update_name">Name</label>
+          <input
+            id="update_name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
 
-        <label className="signup_label" htmlFor="register_confirm_password">
-          Confirm Password
-        </label>
-        <input
-          id="register_confirm_password"
-          placeholder="Confirm password"
-          type="password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          value={confirmPassword}
-        />
-        <button type="submit">Update</button>
+        <div className="auth__input__container">
+          <label htmlFor="update_email">Email Address</label>
+          <input
+            id="update_email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className="auth__input__container">
+          <label htmlFor="update_password">Password</label>
+          <input
+            id="update_password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+        </div>
+
+        <div className="auth__input__container">
+          <label htmlFor="update_confirm_password">Confirm Password</label>
+          <input
+            id="update_confirm_password"
+            type="password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={password}
+          />
+        </div>
+
+        <button className="auth-button green-button" type="submit">
+          Update
+        </button>
+
+        <button
+          className="auth-button"
+          type="submit"
+          onClick={() => navigate("/")}
+        >
+          Go Back
+        </button>
       </form>
     </div>
   );

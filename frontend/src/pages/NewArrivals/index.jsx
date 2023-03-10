@@ -1,11 +1,10 @@
 import React from "react";
 import { getNewArrivals } from "../../lib/axiosAPI";
-import { useNavigate } from "react-router-dom";
 import Meta from "../../components/Meta";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ProductsPrimary from "../../components/ProductsPrimary";
 
 export default function NewArrivals() {
-  const navigate = useNavigate();
   const [newArrivals, setNewArrivals] = React.useState([]);
 
   React.useEffect(() => {
@@ -34,28 +33,8 @@ export default function NewArrivals() {
           />
         </div>
         <div className="newarrivals__listings">
-          {newArrivals.map((item, index) => {
-            return (
-              <div
-                className="productCard_home"
-                data-aos="fade-up"
-                data-aos-duration={500 + (index % 3) * 400}
-                key={item._id}
-                onClick={() => navigate(`/product/${item._id}`)}
-              >
-                <LazyLoadImage
-                  wrapperClassName="productCard_home__productImg"
-                  alt="newarrival_background"
-                  effect="blur"
-                  src={item.images[0]}
-                  placeholderSrc={item.images[0]}
-                />
-                <div className="productCard_home__title">{item.name}</div>
-                <div className="productCard_home__price">
-                  $ {item.price / 100}
-                </div>
-              </div>
-            );
+          {newArrivals.map((item) => {
+            return <ProductsPrimary key={item._id} product={item} />;
           })}
         </div>
       </div>

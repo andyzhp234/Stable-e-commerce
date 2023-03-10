@@ -43,11 +43,7 @@ export default function AdminEditUser() {
   const userUpdateHandler = async (e) => {
     e.preventDefault();
     setPending(true);
-    const body = {
-      name: name,
-      email: email,
-      isAdmin: isAdmin,
-    };
+    const body = { name, email, isAdmin };
     adminUpdateUser(userInfo, params.id, body)
       .then(function (res) {
         setUpdateSuccess(true);
@@ -64,61 +60,56 @@ export default function AdminEditUser() {
   };
 
   return (
-    <div className="profile_container">
+    <div className="auth">
       <DisplayPending pending={pending} />
-      <form
-        className="signup_input_container"
-        style={{ marginTop: "40px" }}
-        onSubmit={userUpdateHandler}
-      >
+      <form className="auth__container" onSubmit={userUpdateHandler}>
         {updateSuccess ? (
           <Alert severity="success">Update Success</Alert>
         ) : error ? (
           <Alert severity="error">{error}</Alert>
         ) : null}
-        <div className="signup_title">Edit User</div>
-        <label className="signup_label" htmlFor="register_name">
-          Name
-        </label>
-        <input
-          id="register_name"
-          placeholder="Enter name"
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          required
-        />
-
-        <label className="signup_label" htmlFor="register_email">
-          Email Address
-        </label>
-        <input
-          id="register_email"
-          placeholder="Enter email"
-          type="text"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          required
-        />
-
-        <div className="admin_edit_user__isadmin">
+        <div className="auth__title">Edit User</div>
+        <div className="auth__input__container">
+          <label htmlFor="update_name">Name</label>
           <input
-            id="admin_edit_user__isadmin-checkbox"
-            type="checkbox"
-            onChange={(e) => setIsAdmin(!isAdmin)}
-            checked={isAdmin}
+            id="update_name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
           />
-          <label htmlFor="admin_edit_user__isadmin-checkbox">Is Admin</label>
         </div>
 
-        <button type="submit">Update</button>
+        <div className="auth__input__container">
+          <label htmlFor="update_email">Email Address</label>
+          <input
+            id="update_email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="auth__checkbox">
+          <input
+            id="auth__updateAdmin"
+            type="checkbox"
+            value={isAdmin}
+            onChange={() => setIsAdmin(!isAdmin)}
+            checked={isAdmin}
+          />
+          <label htmlFor="auth__updateAdmin">
+            Assign admin role to this user
+          </label>
+        </div>
+
+        <button className="auth-button green-button" type="submit">
+          Update
+        </button>
         <button
-          style={{
-            marginTop: "0",
-            backgroundColor: "#E1E1E1",
-            color: "black",
-          }}
-          type="button"
+          className="auth-button"
+          type="submit"
           onClick={() => navigate("/admin/userlist")}
         >
           Go Back
