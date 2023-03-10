@@ -1,18 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import BrandLogo from "../../../../assets/brand-logo.png";
+// import { useNavigate } from "react-router-dom";
+// import BrandLogo from "../../../../assets/brand-logo.png";
 
 export default function NavPage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  function navigateHandler(url) {
-    window.scrollTo(0, 0);
-    navigate(url);
-  }
+  // function navigateHandler(url) {
+  //   window.scrollTo(0, 0);
+  //   navigate(url);
+  // }
 
   return (
     <>
-      <img
+      {/* <img
         src={BrandLogo}
         onClick={() => navigateHandler("/")}
         className="brand-logo"
@@ -49,7 +49,7 @@ export default function NavPage() {
         >
           - All Products
         </h1>
-      </div>
+      </div> */}
     </>
   );
 }
