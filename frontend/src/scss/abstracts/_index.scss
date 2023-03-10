@@ -1,7 +1,3 @@
-// abstracts are things like variables and mixins that aren’t directly compiled to CSS,
-// but instead are used in other places.
-@forward "breakpoints";
-@forward "colors";
-@forward "functions";
-@forward "mixins";
-@forward "typography";
+@forward "./breakpoints";
+@forward "./colors";
+@forward "./extendable";
