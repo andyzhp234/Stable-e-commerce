@@ -48,70 +48,68 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="signup_container">
+    <div className="auth">
       <Meta title="Sign Up" />
       <DisplayPending pending={pending} />
       <Alert severity="warning" style={{ width: "100%", marginBottom: "20px" }}>
         <strong>Pay attention:</strong> This is not a real e-commerce site. You
         don't need to insert your real credentials (email / password) here!
       </Alert>
-      <form className="signup_input_container" onSubmit={registerHandler}>
+      <form className="auth__container" onSubmit={registerHandler}>
         {message ? (
           <Alert severity="error">{message}</Alert>
         ) : error ? (
           <Alert severity="error">{errorMessage}</Alert>
         ) : null}
-        <div className="signup_title">Sign Up</div>
-        <label className="signup_label" htmlFor="register_name">
-          Name
-        </label>
-        <input
-          id="register_name"
-          placeholder="Enter name"
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+        <div className="auth__title">Create an account</div>
 
-        <label className="signup_label" htmlFor="register_email">
-          Email Address
-        </label>
-        <input
-          id="register_email"
-          placeholder="Enter email"
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <label className="signup_label" htmlFor="register_password">
-          Password
-        </label>
-        <input
-          id="register_password"
-          placeholder="Enter password"
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        <label className="signup_label" htmlFor="register_confirm_password">
-          Confirm Password
-        </label>
-        <input
-          id="register_confirm_password"
-          placeholder="Confirm password"
-          type="password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-
-        <button type="submit">Register</button>
-
-        <div className="register_back_to_login">
-          Have an Account?
-          <div onClick={() => navigate(`/login/${redirect}`)}>Sign in</div>
+        <div className="auth__input__container">
+          <label htmlFor="register_name">Name</label>
+          <input
+            id="register_name"
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
         </div>
+        <div className="auth__input__container">
+          <label htmlFor="register_email">Email Address</label>
+          <input
+            id="register_email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="auth__input__container">
+          <label htmlFor="register_password">Password</label>
+          <input
+            id="register_password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="auth__input__container">
+          <label htmlFor="register_confirm_password">Confirm Password</label>
+          <input
+            id="register_confirm_password"
+            type="password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button className="auth-button green-button" type="submit">
+          Register
+        </button>
+
+        <h1 className="auth__navigation">
+          Have an Account?{" "}
+          <span onClick={() => navigate(`/login/${redirect}`)}>Sign in</span>
+        </h1>
       </form>
     </div>
   );

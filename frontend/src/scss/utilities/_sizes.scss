@@ -6,6 +6,22 @@
       margin: $size-value;
     }
 
+    &-left-#{$size-name} {
+      margin-left: $size-value;
+    }
+
+    &-right-#{$size-name} {
+      margin-right: $size-value;
+    }
+
+    &-top-#{$size-name} {
+      margin-top: $size-value;
+    }
+
+    &-bottom-#{$size-name} {
+      margin-bottom: $size-value;
+    }
+
     &-block-#{$size-name} {
       margin-block: $size-value;
     }
@@ -34,6 +50,22 @@
   .padding {
     &-#{$size-name} {
       padding: $size-value;
+    }
+
+    &-left-#{$size-name} {
+      padding-left: $size-value;
+    }
+
+    &-right-#{$size-name} {
+      padding-right: $size-value;
+    }
+
+    &-top-#{$size-name} {
+      padding-top: $size-value;
+    }
+
+    &-bottom-#{$size-name} {
+      padding-bottom: $size-value;
     }
 
     &-block-#{$size-name} {

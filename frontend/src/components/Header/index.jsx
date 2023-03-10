@@ -1,12 +1,12 @@
 import React from "react";
-import NavPage from "./NavPage";
-import NavOthers from "./NavOthers";
+import HeaderLeftMenu from "./HeaderLeftMenu";
+import HeaderRightMenu from "./HeaderRightMenu";
 
 export default function Header() {
   return (
     <div className="header">
-      <NavPage />
-      <NavOthers />
+      <HeaderLeftMenu />
+      <HeaderRightMenu />
     </div>
   );
 }

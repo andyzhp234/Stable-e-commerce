@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.auth-button {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  color: $colors-white;
+  background-color: color("blue", 600);
+  font-size: small;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: color("blue", 700);
+  }
+}
+
+.white-button {
+  border: 1px solid $colors-black;
+  color: $colors-black;
+  background-color: $colors-white;
+
+  &:hover {
+    color: $colors-white;
+    background-color: $colors-black;
+  }
+}
+
+.green-button {
+  color: $colors-white;
+  background-color: color("green", 500);
+
+  &:hover {
+    background-color: color("green", 600);
+  }
+}
