@@ -1,32 +1,83 @@
-@use "../abstracts/colors";
-@use "../abstracts/extendable";
+@use "../abstracts/" as *;
 
-.productPage {
+.productDetailPage {
+  @extend %flex-align-center;
   width: 100%;
   margin-top: 20px;
-  @extend %flex-align-center;
   flex-direction: column;
-}
 
-.product_main_img {
-  width: 80%;
-  height: 40vw;
-  object-fit: cover;
-}
+  &__mainImg {
+    width: 80%;
+    height: 40vw;
+    object-fit: cover;
+  }
 
-.product_img_paginations {
-  margin-top: 10px;
-  width: 100%;
-  @extend %flex-justify-center;
-}
+  &__imgPagination {
+    @extend %flex-justify-center;
+    margin-top: 10px;
+    width: 100%;
 
-.product_img_paginations img {
-  width: 70px;
-  height: 70px;
-  margin-left: 20px;
-  margin-right: 20px;
-  object-fit: cover;
-  cursor: pointer;
+    img {
+      width: 70px;
+      height: 70px;
+      margin-right: 10px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    &--selected {
+      border: 2px solid black;
+    }
+
+    &--notSelected {
+      border: 2px solid color("gray", 200);
+    }
+  }
+
+  &__price {
+    width: 80%;
+    font-size: 35px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+
+  &__pricesContainer {
+    width: 80%;
+    display: flex;
+    margin-top: 40px;
+  }
+
+  &__addCart {
+    display: flex;
+    align-items: center;
+  }
+
+  &__description {
+    width: 80%;
+    margin-top: 80px;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+
+  &__writeReviews {
+    width: 80%;
+    font-weight: 500;
+    margin-top: 80px;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
 }
 
 .product_detail_descriptions {
@@ -48,60 +99,6 @@
   margin-top: 10px;
 }
 
-.product_detail_price {
-  width: 80%;
-  font-size: 35px;
-  font-weight: 600;
-  margin-top: 40px;
-}
-
-.product_detail_count {
-  margin-top: 25px;
-  width: 80%;
-  height: 60px;
-}
-
-.product_detail_count_button {
-  width: 310px;
-  height: 100%;
-  border: solid 1px colors.$border-color;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 25px;
-}
-
-.product_detail_count_button img {
-  width: 5%;
-  height: 30%;
-  margin-left: 20px;
-  margin-right: 20px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.product_detail_add_cart {
-  margin-top: 25px;
-  width: 80%;
-  height: 60px;
-  cursor: pointer;
-}
-
-.product_detail_add_cart_button {
-  width: 310px;
-  height: 100%;
-  border: solid 1px colors.$border-color;
-  border-radius: 20px;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 20px;
-}
-
 .product_detail_description {
   margin-top: 100px;
   width: 80%;
@@ -110,12 +107,16 @@
 }
 
 .product_detail_reviews {
-  margin-top: 30px;
-  padding-bottom: 30px;
-  font-weight: 700;
-  font-size: 25px;
   width: 80%;
-  border-bottom: 1px solid gainsboro;
+  margin-top: 100px;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &:last-of-type {
+    margin-bottom: 200px;
+  }
 }
 
 .product_detail_reviews_details {
@@ -129,12 +130,17 @@
     margin-bottom: 10px;
   }
   select {
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid black;
-    height: 40px;
-    max-width: 400px;
     width: 80%;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 400px;
+    background-color: white;
+  }
+  textarea {
+    border-radius: 20px;
+    padding: 20px;
   }
 }
 
@@ -152,14 +158,20 @@
 }
 
 .product_detail_reviews_comment {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid gainsboro;
+  padding: 20px 0px;
   width: 100%;
   font-size: 1rem;
   font-weight: 500;
+  border-bottom: 1px solid gainsboro;
+
   div:last-child {
     margin-top: 15px;
     font-weight: 600;
   }
+}
+
+.product_detail_comment__title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
 }

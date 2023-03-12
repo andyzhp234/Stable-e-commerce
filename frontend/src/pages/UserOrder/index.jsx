@@ -21,15 +21,13 @@ export default function OrderPage() {
     if (userInfo) {
       userGetAllOrders(userInfo, currPageQuery)
         .then(function (res) {
-          setOrders(res.data);
           setPending(false);
+          setOrders(res.data);
         })
         .catch(function (error) {
+          setPending(false);
           if (error.response.status === 401) {
             dispatch(logout());
-          } else {
-            console.log(error.message);
-            setPending(false);
           }
         });
     }

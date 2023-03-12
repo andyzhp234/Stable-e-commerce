@@ -3,9 +3,8 @@ import Ratings from "../Ratings";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-export default function ProductsPrimary(props) {
+export default function ProductsPrimary({ product }) {
   const navigate = useNavigate();
-  let product = props.product;
 
   return (
     <div
@@ -25,6 +24,9 @@ export default function ProductsPrimary(props) {
         <Ratings product={product} />
       </div>
       <div style={{ fontSize: "22px" }}>$ {product.price / 100}</div>
+      {product.isNewArrival ? (
+        <div className="productCard__isNewTag">New!</div>
+      ) : null}
     </div>
   );
 }

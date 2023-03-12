@@ -9,4 +9,5 @@ body {
   font-family: $ff-intel;
   background-color: $background-color;
   color: $colors-black;
+  transition: background-color 0.4s ease-in-out;
 }
