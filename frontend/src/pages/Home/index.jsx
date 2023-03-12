@@ -3,13 +3,11 @@ import LandingImage1 from "../../assets/bg-landing-1.jpg";
 import { useNavigate } from "react-router-dom";
 import { getRecommendProducts } from "../../lib/axiosAPI";
 import ProductsPrimary from "../../components/ProductsPrimary";
-import useChangeBackgroundOnScroll from "../../utils/useChangeBackgroundOnScroll";
 
 export default function Home() {
   const navigate = useNavigate();
   const [recommend, setRecommend] = React.useState([]);
   const targetRef = React.useRef(null);
-  useChangeBackgroundOnScroll(targetRef, "#093824");
 
   React.useEffect(() => {
     window.scrollTo(0, 0);

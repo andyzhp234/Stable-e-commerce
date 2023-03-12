@@ -86,138 +86,124 @@ export default function AdminEditProduct() {
   };
 
   return (
-    <div className="admin-create-product">
+    <div className="auth">
       <DisplayPending pending={pending} />
-      <div
-        className="admin-create-product__go-back"
-        onClick={() => navigate("/admin/productlist")}
+      <form
+        className="adminCreateProduct__container"
+        onSubmit={updateProductHandler}
       >
-        Go Back
-      </div>
-      <div className="admin-create-product__body">
-        <form
-          className="admin-create-product__container"
-          onSubmit={updateProductHandler}
+        {createSuccess ? (
+          <Alert severity="success">Update Succeed</Alert>
+        ) : error ? (
+          <Alert severity="error">{error}</Alert>
+        ) : null}
+        <div className="auth__title">Edit Product</div>
+
+        <div className="auth__input__container">
+          <label htmlFor="update_name">Name: </label>
+          <input
+            id="update_name"
+            type="text"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            required
+          />
+        </div>
+        <div className="auth__input__container">
+          <label htmlFor="update_description">Description: </label>
+          <textarea
+            id="update_description"
+            className="hide-scrollbar"
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
+            required
+          ></textarea>
+        </div>
+        <div className="auth__input__container">
+          <label>Category: </label>
+          <input
+            id="update_category"
+            type="text"
+            onChange={(e) => setCategory(e.target.value)}
+            value={category}
+            required
+          />
+        </div>
+        <div className="auth__input__container">
+          <label htmlFor="update_brand">Brand: </label>
+          <input
+            id="update_brand"
+            type="text"
+            onChange={(e) => setBrand(e.target.value)}
+            value={brand}
+            required
+          />
+        </div>
+        <div className="auth__input__container">
+          <label htmlFor="update_price">Price (In Cent): </label>
+          <input
+            id="update_price"
+            type="number"
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}
+            min="0"
+            required
+          />
+        </div>
+        <div className="auth__input__container">
+          <label htmlFor="update_stock">Count In Stock: </label>
+          <input
+            id="update_stock"
+            type="number"
+            onChange={(e) => setStock(e.target.value)}
+            value={stock}
+            min="0"
+            required
+          />
+        </div>
+
+        <div className="auth__checkbox">
+          <input
+            id="update_newArrivals"
+            type="checkbox"
+            checked={newArrivals}
+            onChange={(e) => setNewArrivals(!newArrivals)}
+          />
+          <label htmlFor="update_newArrivals">New Arrivals?</label>
+        </div>
+        <div className="auth__checkbox">
+          <input
+            id="update_recommend"
+            type="checkbox"
+            checked={isRecommend}
+            onChange={(e) => setIsRecommend(!isRecommend)}
+          />
+          <label htmlFor="update_recommend">Recommend?</label>
+        </div>
+
+        <div className="product-image-upload__container">
+          <label htmlFor="product-image-upload">Image: </label>
+          <input
+            id="product-image-upload"
+            style={{ border: "none ", borderRadius: "0" }}
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={(e) => setImg(e.target.files)}
+          />
+        </div>
+
+        <button type="submit" className="auth-button green-button">
+          Update
+        </button>
+        <button
+          className="auth-button"
+          type="submit"
+          onClick={() => navigate("/admin/productlist")}
         >
-          {createSuccess ? (
-            <Alert severity="success">Update Succeed</Alert>
-          ) : error ? (
-            <Alert severity="error">{error}</Alert>
-          ) : null}
-          <div className="admin-create-product__title">Edit Product</div>
-
-          <div className="admin-create-product__description">
-            <div>Name: </div>
-            <input
-              type="text"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              required
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Description: </div>
-            <input
-              type="text"
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}
-              required
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Category: </div>
-            <input
-              type="text"
-              onChange={(e) => setCategory(e.target.value)}
-              value={category}
-              required
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Brand: </div>
-            <input
-              type="text"
-              onChange={(e) => setBrand(e.target.value)}
-              value={brand}
-              required
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Price (In Cent): </div>
-            <input
-              type="number"
-              onChange={(e) => setPrice(e.target.value)}
-              value={price}
-              min="0"
-              required
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Count In Stock: </div>
-            <input
-              type="number"
-              onChange={(e) => setStock(e.target.value)}
-              value={stock}
-              min="0"
-              required
-            />
-          </div>
-          <div
-            className="admin-create-product__description"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            New Arrivals?
-            <input
-              style={{
-                width: "30px",
-                height: "30px",
-                margin: "0",
-                marginLeft: "20px",
-              }}
-              type="checkbox"
-              checked={newArrivals}
-              onChange={(e) => setNewArrivals(!newArrivals)}
-            />
-          </div>
-          <div
-            className="admin-create-product__description"
-            style={{ display: "flex", alignItems: "center" }}
-          >
-            Recommend?
-            <input
-              style={{
-                width: "30px",
-                height: "30px",
-                margin: "0",
-                marginLeft: "20px",
-              }}
-              type="checkbox"
-              checked={isRecommend}
-              onChange={(e) => setIsRecommend(!isRecommend)}
-            />
-          </div>
-          <div className="admin-create-product__description">
-            <div>Image: </div>
-            {/* {Array.isArray(img) &&
-              img.map((i) => {
-                return <div key={i}>filename: {i}</div>;
-              })} */}
-
-            <input
-              style={{ border: "none ", borderRadius: "0" }}
-              type="file"
-              id="product-image-upload"
-              accept="image/*"
-              multiple
-              onChange={(e) => setImg(e.target.files)}
-            />
-          </div>
-
-          <button type="submit" className="create-product-button">
-            Update
-          </button>
-        </form>
-      </div>
+          Go Back
+        </button>
+      </form>
     </div>
   );
 }

@@ -84,3 +84,28 @@
   width: 200px;
   cursor: pointer;
 }
+
+.mark-delivery-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: fit-content;
+
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 10px;
+
+  color: $colors-white;
+  background-color: color("green", 500);
+  cursor: pointer;
+}
+
+.red-button {
+  color: $colors-white;
+  background-color: color("red", 500);
+
+  &:hover {
+    background-color: color("red", 600);
+  }
+}

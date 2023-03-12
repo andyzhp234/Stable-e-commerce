@@ -43,11 +43,7 @@ export default function AdminEditUser() {
   const userUpdateHandler = async (e) => {
     e.preventDefault();
     setPending(true);
-    const body = {
-      name: name,
-      email: email,
-      isAdmin: isAdmin,
-    };
+    const body = { name, email, isAdmin };
     adminUpdateUser(userInfo, params.id, body)
       .then(function (res) {
         setUpdateSuccess(true);
@@ -78,6 +74,7 @@ export default function AdminEditUser() {
           <input
             id="update_name"
             type="text"
+            value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -88,6 +85,7 @@ export default function AdminEditUser() {
           <input
             id="update_email"
             type="email"
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -97,6 +95,7 @@ export default function AdminEditUser() {
           <input
             id="auth__updateAdmin"
             type="checkbox"
+            value={isAdmin}
             onChange={() => setIsAdmin(!isAdmin)}
             checked={isAdmin}
           />

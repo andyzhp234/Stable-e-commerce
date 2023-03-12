@@ -67,15 +67,14 @@ export default function AdminProductList() {
         {error ? <Alert severity="error">{error}</Alert> : null}
         <div className="admin__userlist__title">Products</div>
         <div className="admin__userlist__list">
-          <div className="admin_productlist__addproduct">
-            <div
-              onClick={() => {
-                window.scrollTo(0, 0);
-                navigate("/admin/createproduct");
-              }}
-            >
-              Add New Product
-            </div>
+          <div
+            className="black-rounded-button self-end"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/admin/createproduct");
+            }}
+          >
+            Add New Product
           </div>
 
           <div className="admin__userlist__list__title">

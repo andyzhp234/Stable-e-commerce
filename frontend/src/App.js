@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./scss/style.scss";
-import "aos/dist/aos.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import PrivateRoutes from "./utils/PrivateRoutes";
 import AdminRoutes from "./utils/AdminRoutes";
