@@ -36,13 +36,13 @@ server.use("/api/products", productRoutes);
 server.use("/api/users", userRoutes);
 server.use("/api/orders", orderRoutes);
 
-// const __dirname = path.resolve();
-// if (process.env.MODE === "production") {
-//   server.use(express.static(path.join(__dirname, "/frontend/build")));
-//   server.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-//   });
-// }
+const __dirname = path.resolve();
+if (process.env.MODE === "production") {
+  server.use(express.static(path.join(__dirname, "/frontend/build")));
+  server.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 const PORT = process.env.PORT;
 server.listen(PORT, () => {
