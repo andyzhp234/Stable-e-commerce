@@ -22,7 +22,7 @@ export default function Paginate({ page, pages }) {
       <Pagination
         count={pages ? pages : 1}
         page={page ? page : 1}
-        size="large"
+        size="medium"
         color="primary"
         onChange={paginateHandler}
       />

@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoints";
+@use "../abstracts/" as *;
 
 .order-detail {
   width: 100%;
@@ -15,8 +15,12 @@
 .order-detail__title {
   margin-top: 30px;
   margin-bottom: 30px;
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: 600;
+
+  @include breakpoint("md") {
+    font-size: 3rem;
+  }
 }
 
 .order-detail__section {
@@ -25,13 +29,20 @@
   border-top: 1px solid gainsboro;
   display: flex;
   flex-direction: column;
-  font-size: 1.1rem;
+  font-size: 0.6rem;
   font-weight: 500;
 
   &__title {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 10px;
+  }
+
+  @include breakpoint("md") {
+    font-size: 1rem;
+    &__title {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -45,14 +56,5 @@
     width: 70px;
     object-fit: cover;
     margin-right: 20px;
-  }
-}
-
-@include breakpoints.breakpoint(mobile) {
-  .order-detail__title {
-    font-size: 1.5rem;
-  }
-  .order-detail__section__order-items {
-    font-size: 0.7rem;
   }
 }

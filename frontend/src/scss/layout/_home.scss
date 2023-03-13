@@ -1,73 +1,203 @@
+@use "../abstracts/" as *;
+
 .home {
   &__landing {
-    height: 910px;
+    height: 300px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include breakpoint("md") {
+      height: 600px;
+    }
+
+    @include breakpoint("lg") {
+      height: 910px;
+    }
 
     &__content {
-      width: 50%;
-      padding: 300px 200px;
+      padding: 0px 50px;
+
+      @include breakpoint("lg") {
+        width: 50%;
+      }
+
+      @include breakpoint("xl") {
+        padding: 0px 200px;
+      }
     }
 
     &__title {
-      font-size: 3.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+
+      @include breakpoint("sm") {
+        font-size: 2rem;
+      }
+
+      @include breakpoint("md") {
+        font-size: 3.5rem;
+      }
+
+      @include breakpoint("lg") {
+        font-size: 3rem;
+      }
     }
 
     &__image {
-      width: 50%;
+      width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      z-index: -1;
+
+      @include breakpoint("lg") {
+        position: static;
+        width: 50%;
+      }
     }
   }
 
   &__about {
-    height: 970px;
-    padding: 100px;
+    height: 300px;
+    padding: 30px;
     position: relative;
 
-    p {
+    @include breakpoint("sm") {
+      height: 500px;
+      padding: 50px;
+    }
+    @include breakpoint("md") {
+      height: 600px;
+      padding: 70px;
+    }
+    @include breakpoint("lg") {
+      height: 970px;
       padding: 100px;
-      max-width: 80%;
-      font-size: 2.8rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 600;
+      @include breakpoint("sm") {
+        font-size: 1.5rem;
+      }
+      @include breakpoint("md") {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      padding: 20px;
+      font-size: 1.2rem;
+
+      @include breakpoint("sm") {
+        font-size: 1.5rem;
+        padding: 50px;
+      }
+
+      @include breakpoint("md") {
+        font-size: 2rem;
+        padding: 70px;
+      }
+
+      @include breakpoint("lg") {
+        max-width: 80%;
+        font-size: 2.8rem;
+        padding: 100px;
+      }
     }
 
     &__bottomImg {
-      width: 600px;
-      height: 250px;
-      position: absolute;
-      bottom: 100px;
-      left: 200px;
-      z-index: -1;
-      object-fit: cover;
+      display: none;
+
+      @include breakpoint("xl") {
+        display: block;
+        width: 600px;
+        height: 250px;
+        position: absolute;
+        bottom: 100px;
+        left: 200px;
+        z-index: -1;
+        object-fit: cover;
+      }
     }
 
     &__rightImg {
-      width: 400px;
-      height: 600px;
-      z-index: -1;
-      position: absolute;
-      right: 100px;
-      top: 200px;
-      object-fit: cover;
+      display: none;
+
+      @include breakpoint("xl") {
+        display: block;
+        width: 400px;
+        height: 600px;
+        z-index: -1;
+        position: absolute;
+        right: 100px;
+        top: 200px;
+        object-fit: cover;
+      }
     }
   }
 
   &__materials {
     display: flex;
     align-items: center;
-    height: 970px;
-    padding: 100px;
+    height: 400px;
+    padding: 50px;
     position: relative;
-    font-size: 4rem;
+    font-size: 1rem;
     text-align: end;
+
+    @include breakpoint("sm") {
+      font-size: 2rem;
+      padding: 100px;
+      height: 560px;
+    }
+
+    @include breakpoint("lg") {
+      font-size: 3rem;
+      padding: 100px;
+      height: 700px;
+    }
+
+    @include breakpoint("xl") {
+      font-size: 4rem;
+      padding: 100px;
+      height: 970px;
+    }
   }
 
   &__featured {
-    padding: 100px;
+    padding: 20px;
+
+    @include breakpoint("sm") {
+      padding: 50px;
+    }
+    @include breakpoint("lg") {
+      padding: 70px;
+    }
+    @include breakpoint("xl") {
+      padding: 100px;
+    }
   }
 
   &__featured__container {
-    padding: 50px 100px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    padding: 20px 50px;
+    grid-template-columns: 1fr;
+
+    @include breakpoint("sm") {
+      padding: 50px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint("lg") {
+      padding: 70px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include breakpoint("xl") {
+      padding: 100px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }

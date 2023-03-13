@@ -11,15 +11,60 @@
     display: flex;
     align-items: center;
   }
+
+  &__account-text {
+    width: 25px;
+    margin: 0 5px;
+    font-size: x-small;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include breakpoint(sm) {
+      font-size: smaller;
+      width: 35px;
+    }
+
+    @include breakpoint(md) {
+      font-size: small;
+      width: 45px;
+    }
+
+    @include breakpoint(lg) {
+      font-size: medium;
+      width: 75px;
+    }
+  }
 }
 
-.navigation {
-  font-weight: 600;
+.navigation-text {
   height: 100%;
   display: flex;
   align-items: center;
+  font-size: x-small;
+  font-weight: 600;
+  margin: 0px 6px;
   cursor: pointer;
   position: relative;
+
+  &:first-of-type {
+    margin-left: 20px;
+  }
+
+  @include breakpoint("sm") {
+    font-size: small;
+    margin: 0px 10px;
+  }
+
+  @include breakpoint("md") {
+    font-size: medium;
+    margin: 0px 15px;
+  }
+
+  @include breakpoint("lg") {
+    font-size: medium;
+    margin: 0px 20px;
+  }
 
   &::after {
     content: "";

@@ -26,23 +26,30 @@ import AdminEditUser from "./pages/AdminEditUser";
 import AdminEditOrder from "./pages/AdminEditOrder";
 import Meta from "./components/Meta";
 import NotFound from "./pages/NotFound";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
         <Meta />
         <Header />
         <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Signup />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/newarrivals" element={<NewArrivals />} />
           <Route path="/shop" element={<AllProducts />} />
+
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/successPayment" element={<SuccessPayment />} />
-
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Signup />} />
 
           <Route element={<PrivateRoutes />}>
             <Route path="/profile" element={<UserDetailProfile />} />

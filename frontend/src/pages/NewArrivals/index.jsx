@@ -23,9 +23,9 @@ export default function NewArrivals() {
       <Meta title="New Arrivals" />
       <div className="newarrivals__container">
         <div className="newarrivals__title">
-          <div>New Arrivals</div>
+          <h1>New Arrivals</h1>
           <LazyLoadImage
-            wrapperClassName="productCard_primary__image"
+            wrapperClassName="newArrival__landingImg"
             alt="newarrival_background"
             effect="blur"
             src="https://d2c0vv5h4nuw6w.cloudfront.net/images/6848967646007edc.jpg"

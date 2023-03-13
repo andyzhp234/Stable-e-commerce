@@ -35,7 +35,7 @@ export default function HeaderAdmin({
       ref={anchorEl}
       onClick={() => setOpenAnchor(!openAnchor)}
     >
-      {userInfo.name}
+      <h1 className="header__account-text">{userInfo.name}</h1>
       <Menu
         anchorEl={anchorEl.current}
         open={openAnchor}

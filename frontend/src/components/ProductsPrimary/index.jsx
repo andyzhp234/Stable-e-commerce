@@ -12,21 +12,19 @@ export default function ProductsPrimary({ product }) {
       onClick={() => navigate(`/product/${product._id}`)}
     >
       <LazyLoadImage
-        width={"100%"}
-        height={"75%"}
-        alt={"product_image"}
+        width="100%"
+        height="75%"
+        alt="product_image"
         effect="blur"
         src={product.images[0]}
         placeholderSrc={product.images[0]}
       />
-      <div>{product.name}</div>
-      <div>
-        <Ratings product={product} />
-      </div>
-      <div style={{ fontSize: "22px" }}>$ {product.price / 100}</div>
-      {product.isNewArrival ? (
+      <h1>{product.name}</h1>
+      <Ratings product={product} />
+      <h2>$ {product.price / 100}</h2>
+      {product.isNewArrival && (
         <div className="productCard__isNewTag">New!</div>
-      ) : null}
+      )}
     </div>
   );
 }

@@ -34,40 +34,40 @@ export default function AdminOrderList() {
   }, [userInfo, dispatch, currPageQuery]);
 
   return (
-    <div className="admin__userlist">
+    <div className="admin-list">
       <DisplayPending pending={pending} />
-      <div className="admin_userlist__container">
-        <div className="admin__userlist__title">Orders</div>
-        <div className="admin__userlist__list">
-          <div className="admin__userlist__list__title">
-            <div>OrderID</div>
-            <div>UserID</div>
-            <div>Date</div>
-            <div>Total</div>
-            <div>Delivered</div>
-            <div></div>
-          </div>
-
-          {orders.orders?.map((order) => {
-            return (
-              <div key={order._id} className="admin__userlist__list__user">
-                <div>{order._id}</div>
-                <div>{order.user}</div>
-                <div>
-                  {new Date(order.createdAt).toISOString().split("T")[0]}
-                </div>
-                <div>$ {order.totalPrice / 100}</div>
-                <div>{order.isDelivered ? <div>Yes</div> : <div>No</div>}</div>
-                <div
-                  style={{ color: "blue", cursor: "pointer" }}
-                  onClick={() => navigate(`/admin/orderdetails/${order._id}`)}
-                >
-                  Details
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      <div className="admin-list__container">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">OrderID</th>
+              <th scope="col">UserID</th>
+              <th scope="col">Date</th>
+              <th scope="col">Total</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.orders?.map((order) => {
+              return (
+                <tr key={order._id}>
+                  <td>{order._id}</td>
+                  <td>{order.user}</td>
+                  <td>
+                    {new Date(order.createdAt).toISOString().split("T")[0]}
+                  </td>
+                  <td>$ {order.totalPrice / 100}</td>
+                  <td
+                    className="color-blue-600 cursor-pointer"
+                    onClick={() => navigate(`/admin/orderdetails/${order._id}`)}
+                  >
+                    Detail
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
         <Paginate page={orders.page} pages={orders.pages} />
       </div>
     </div>

@@ -1,19 +1,13 @@
-// mobile Max width of (700px or 43.75em)
-// tablet Max width of (900px or 56.25em)
-// desktop unlimited width size
-
 $breakpoints-up: (
-  "mobile": 43.75em,
-  "tablet": 56.25em,
-  sm: 640px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1280px,
-  2xl: 1536px,
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+  "2xl": 1536px,
 );
 
 @mixin breakpoint($size) {
-  @media (max-width: map-get($breakpoints-up, $size)) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
     @content;
   }
 }
