@@ -99,6 +99,22 @@ export default function LoginPage() {
             Register
           </span>
         </h1>
+        <h1 className="auth__legal">
+          By Logging into QuickChat you agree to our{" "}
+          <span
+            className="color-blue-600 cursor-pointer"
+            onClick={() => navigate("/legal")}
+          >
+            Terms of Services
+          </span>{" "}
+          and{" "}
+          <span
+            className="color-blue-600 cursor-pointer"
+            onClick={() => navigate("/privacy")}
+          >
+            Privacy Policy.
+          </span>
+        </h1>
       </form>
     </div>
   );

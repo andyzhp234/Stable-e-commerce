@@ -110,6 +110,22 @@ export default function SignupPage() {
           Have an Account?{" "}
           <span onClick={() => navigate(`/login/${redirect}`)}>Sign in</span>
         </h1>
+        <h1 className="auth__legal">
+          By Signing into QuickChat you agree to our{" "}
+          <span
+            className="color-blue-600 cursor-pointer"
+            onClick={() => navigate("/legal")}
+          >
+            Terms of Services
+          </span>{" "}
+          and{" "}
+          <span
+            className="color-blue-600 cursor-pointer"
+            onClick={() => navigate("/privacy")}
+          >
+            Privacy Policy.
+          </span>
+        </h1>
       </form>
     </div>
   );

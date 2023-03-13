@@ -26,6 +26,9 @@ import AdminEditUser from "./pages/AdminEditUser";
 import AdminEditOrder from "./pages/AdminEditOrder";
 import Meta from "./components/Meta";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfServices from "./pages/TermsOfServices";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -50,6 +53,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/successPayment" element={<SuccessPayment />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/legal" element={<TermsOfServices />} />
 
           <Route element={<PrivateRoutes />}>
             <Route path="/profile" element={<UserDetailProfile />} />
