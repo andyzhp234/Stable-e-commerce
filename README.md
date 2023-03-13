@@ -1,111 +1,50 @@
-<h1  align="center">
-<br>
-<a  href="https://www.stable-store.com"><img  src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/brand-logo-1.PNG"  alt="Markdownify"  width="200"></a>
-<br>
-  Furniture eCommerce Web Apps
-<br>
-</h1>
-<h4  align="left"><a  href="https://www.stable-store.com">Stable</a> is a React and Node.js based eCommerce web app built using React, Express, Node.js, and MongoDB
-</h4>
+<div align="center">
+  <img src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/brand-logo.png" alt="brand-logo" width="150" />
+  <h1>Furniture eCommerce Web Apps</h1>
+</div>
 
-## About
+# Description
 
-I have started this project with the purpose of learning how to develope a Web App that solves real-life problems and fills a need in the business/enterprise space.
+<a href="https://www.stable-store.com">Stable</a> is a React and Node.js based eCommerce Web App built using React, Express, Node.js, and MongoDB (MERN Stack)
 
-I have decided to develop an eCommerce site because I love shopping online, and I am also very interested in learning how to build a website that integrates checkout.
+# Live Site
 
-Unlike eCommerce websites like Amazon, eBay, or Walmart, which sells almost everything, this eCommerce web app specializes in selling furniture because I want to focus on a particular industry and make the website one of the best in that industry.
+https://www.stable-store.com
 
-Due to copyright, there aren't many good product images you can find online for free; however, I was able to find many high-quality furniture product images at pexels.com and unsplash.com.
+## Documentations
 
-I put a lot of effort into it and I hope that you could like it.
+<a href="https://github.com/andyzhp234/stable-e-commerce-web/tree/main/documentations">Project Documentations</a>
 
-Feel free to try it out! Let me know if you enjoyed it with a ⭐️
+# Screenshots
 
-## Demo
-
-You can try the demo here
-
-- <a href="https://www.stable-store.com">Demo</a>
-
-## Documents
-
-<a href="https://github.com/andyzhp234/stable-e-commerce-web/blob/main/design-doc/design-doc.md" >System Design Documents</a>
-
-## Videos
-
-## Some Screenshots
-
-**Home**
-![Desktop-Home](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-home-1.png)
-
-<br/>
-
-**All Product**
-![Desktop-All Product](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-allProduct.png)
-
-<br/>
-
-**Shopping Cart**
-![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-shoppingCart.png)
-
-<br/>
-
-**Search**
-![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-search.png)
-
-<br/>
-
-**User Order List**
-![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-orderList.png)
-
-<br/>
-
-**Login**
-![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-login.png)
-
-<br/>
-
-**Admin Product Lists**
-![desktop-shoppingCart](https://d2c0vv5h4nuw6w.cloudfront.net/screenshots/desktop-admin-productList.png)
+<img src="documentations/image/../images/readme-screenshots/home.png" />
+<img src="documentations/image/../images/readme-screenshots/allProducts.png" />
+<img src="documentations/image/../images/readme-screenshots/adminLists.png" />
 
 ## Features
 
-- Responsive Layout
-- User Sign up & User Authentication and Authorization
-- Display Recommend Products on home page
-- Display New Arrivals Products
-- Display All Products
-- Sort Products by Price and Rating
-- Filter Products by Availability, Category, Brand, and Price
-- Search Products by name, category, brand, and description
-- Product Detail Page
-  - Product image slider
-  - Add product to shopping cart
-  - Logged in User/Admin can leave comments with rating
-  - Display all reviews
-- Shopping Cart
-  - User able to change product quantity within shopping cart page
-  - User able to delete product
-- Admin can view all registered users & admins
-  - Admin is able to update users profile
-  - Admin is able to promote a user to be admin
-  - Admin is able to delete user
-- Admin can view all products
-  - Admin is able to create a new product
-  - Admin is able to delete a product
-  - Admin is able to update a product
-- Admin can View All Orders
-  - Admin can mark an order as delivered
-- User/Admin can update their profile
-- Frontend & Backend Paginations
+- Responsive layout
+- User sign up, authentication, and authorization
+- Display recommended products on home page
+- Display new arrival products
+- Display all products
+- Sort products by price and rating
+- Filter products by availability, category, brand, and price
+- Search products by name, category, brand, and description
+- Product detail page with image slider, ability to add product to shopping cart, and logged-in user/admin commenting and rating features
+- Shopping cart with ability to change product quantity and delete products
+- Admin panel with ability to view all registered users and admins, update user profiles, promote users to admin, and delete users
+- Admin panel with ability to view all products, create new products, delete products, and update products
+- Admin panel with ability to view all orders and mark orders as delivered
+- User and admin profile updates
+- Frontend and backend product pagination
 - Loading backdrop to signal state change
-- React-hemet to dynamically change head and meta tag
-- Scroll animations for better user experiences
-- Lazy Load Image to improve the page's loading time
-- Loading skeletons
-- All Product Images are store in AWS S3 Private Bucket
-- AWS CloudFront CDN in front of AWS S3 to increase performance by delivering content (images) faster and HTTPs for S3 Images
+- Dynamic head and meta tag changes using React-helmet
+- Scroll animations for improved user experience
+- Lazy load images for faster page loading time
+- Loading skeletons for visual feedback during loading
+- All product images stored in AWS S3 private bucket
+- AWS CloudFront CDN to deliver content (images) faster and securely using HTTPS for S3 images
 
 ## Technologies
 
@@ -155,23 +94,10 @@ You can try the demo here
 
 ## Potential Improvements
 
-- Adding Refresh Token for Better User Experiences
-- Use Redis for cache
+- Refresh Token for better User experiences
 - Use Elastic Search for product search
-- Deploy to Aws
-- Use Nginx and Docker
-- Consider Load Balancer
 - User Authentication using Google / Facebook / OAuth
+- Track Visitors & Analytics
+- Improve SEO
 - Cypress Test
 - Jest Unit Test
-- Improve SEO
-- Track Visitors & Analytics
-
-## What I Learned
-
-- JWT vs Session (cookies)
-- How to use Stripe as Payment Gateways
-- AWS S3 and CloudFront CDN
-- Sass
-
-Writing CSS following BEM
