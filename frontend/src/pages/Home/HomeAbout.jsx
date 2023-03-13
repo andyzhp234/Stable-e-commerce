@@ -1,5 +1,5 @@
 import React from "react";
-import LandingImage1 from "../../assets/bg-landing-1.jpg";
+// import LandingImage1 from "../../assets/bg-landing-1.jpg";
 
 export default function HomeAbout() {
   return (
@@ -13,14 +13,14 @@ export default function HomeAbout() {
       </p>
       <img
         className="home__about__bottomImg"
-        src="https://images.pexels.com/photos/2440471/pexels-photo-2440471.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        src="https://d2c0vv5h4nuw6w.cloudfront.net/images/bg-landing.jpg"
         alt="landing background images"
         data-aos="fade-up"
         data-aos-duration="1000"
       />
       <img
         className="home__about__rightImg"
-        src={LandingImage1}
+        src="https://d2c0vv5h4nuw6w.cloudfront.net/images/bg-landing-1.jpg"
         alt="landing background images"
         data-aos="fade-up"
         data-aos-duration="1000"

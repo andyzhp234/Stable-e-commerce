@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import IconShoppingCart from "../../../assets/shopping-cart.png";
-import IconSearch from "../../../assets/search.png";
+// import IconShoppingCart from "../../../assets/shopping-cart.png";
+// import IconSearch from "../../../assets/search.png";
 import SearchModal from "../../Modal/SearchModal";
 import AccountIcon from "../AccountIcon";
 import HeaderIcon from "../HeaderIcon";
@@ -21,8 +21,14 @@ export default function HeaderRightMenu() {
 
   return (
     <div className="header__container">
-      <HeaderIcon src={IconSearch} onClick={openSearchHandler} />
-      <HeaderIcon src={IconShoppingCart} onClick={navigateHandler} />
+      <HeaderIcon
+        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/search.png"
+        onClick={openSearchHandler}
+      />
+      <HeaderIcon
+        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/shopping-cart.png"
+        onClick={navigateHandler}
+      />
       <AccountIcon />
       <SearchModal
         openModal={openSearchModal}
