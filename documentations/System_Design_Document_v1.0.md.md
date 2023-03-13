@@ -4,113 +4,92 @@
 
 Author: Haopeng Zeng
 
-Date: 11/19/2022 (Updated)
+Date: 3/12/2022 (Updated)
 
 # Table of Contents
+
 1.  <a href="#overview">Overview</a>
 2.  <a href="#project-specifications">Project Specifications</a>
-    * <a href="#features"> Features </a>
-    * <a href="#user-stories"> User Stories </a>
+    - <a href="#features"> Features </a>
+    - <a href="#user-stories"> User Stories </a>
 3.  <a href="#architecture-and-organization">Architecture and Organization</a>
-    * <a href="#system-overview">System Overview </a>
-    * <a href="#middleware"> Middleware </a>
-    * <a href="#frontend-routes"> Frontend Routes </a>
-    * <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
-    * <a href="#data-schemas"> Data Schemas </a>
-    * <a href="#deployment"> Deployment </a>
-    * <a href="#service-dependencies"> Service Dependencies </a>
+    - <a href="#system-overview">System Overview </a>
+    - <a href="#middleware"> Middleware </a>
+    - <a href="#frontend-routes"> Frontend Routes </a>
+    - <a href="#backend-rest-api-routes"> Backend REST API Routes </a>
+    - <a href="#data-schemas"> Data Schemas </a>
+    - <a href="#deployment"> Deployment </a>
+    - <a href="#service-dependencies"> Service Dependencies </a>
 4.  <a href="#design-considerations">Design Considerations</a>
 
 # Overview
 
-Stable is a online eCommerce web app that sells furnitures. This Web App is developed using React, Express, Node.js, and MongoDB.
-
-I have started this project with the purpose of learning how to develope a Web App that solves real-life problems and fills a need in the business/enterprise space.
-
-I have decided to develop an eCommerce site because I love shopping online, and I am also very interested in learning how to build a website that integrates checkout.
-
-Unlike eCommerce websites like Amazon, eBay, or Walmart, which sells almost everything, this eCommerce web app specializes in selling furniture because I want to focus on a particular industry and make the website one of the best in that industry.
-
-Due to copyright, there aren't many good product images you can find online for free; however, I was able to find many high-quality furniture product images at pexels.com and unsplash.com.
+Stable is an eCommerce web application that offers furniture for sale online. The app was created using React, Express, Node.js, and MongoDB. My motivation for embarking on this project was to gain hands-on experience in developing a web application that solves real-world problems and meets the needs of businesses.
 
 #### Why eCommerce?
 
-eCommerce is a website that contains a bunch of listings for products. By building a eCommerce website I can learn more about SEO, content optimization, checkout optimization, and learn about how to track visitors, analytics.
+I believe that building an eCommerce website presents a great opportunity to enhance my frontend skills. Creating an attractive and user-friendly website that encourages users to make purchases is an in-demand skill set. Additionally, building an eCommerce website enables me to learn valuable skills such as SEO optimization.
+
+During the project, I also gained knowledge on how to integrate online payment systems using API such as Stripe. I also became aware of how image sizes can significantly impact the user experience of the website. Using large image sizes can take up more bandwidth, making it slower for users to download the page and negatively impacting the overall performance of the website.
 
 # Project Specifications
 
 ## Features
 
-- Responsive Layout
-- User Sign up & User Authentication and Authorization
-- Display Recommend Products on home page
-- Display New Arrivals Products
-- Display All Products
-- Sort Products by Price and Rating
-- Filter Products by Availability, Category, Brand, and Price
-- Search Products by name, category, brand, and description
-- Product Detail Page
-  - Product image slider
-  - Add product to shopping cart
-  - Logged in User/Admin can leave comments with rating
-  - Display all reviews
-- Shopping Cart
-  - User able to change product quantity within shopping cart page
-  - User able to delete product
-- Admin can view all registered users & admins
-  - Admin is able to update users profile
-  - Admin is able to promote a user to be admin
-  - Admin is able to delete user
-- Admin can view all products
-  - Admin is able to create a new product
-  - Admin is able to delete a product
-  - Admin is able to update a product
-- Admin can View All Orders
-  - Admin can mark an order as delivered
-- User/Admin can update their profile
-- Frontend & Backend Paginations
+- Responsive layout
+- User sign up, authentication, and authorization
+- Display recommended products on home page
+- Display new arrival products
+- Display all products
+- Sort products by price and rating
+- Filter products by availability, category, brand, and price
+- Search products by name, category, brand, and description
+- Product detail page with image slider, ability to add product to shopping cart, and logged-in user/admin commenting and rating features
+- Shopping cart with ability to change product quantity and delete products
+- Admin panel with ability to view all registered users and admins, update user profiles, promote users to admin, and delete users
+- Admin panel with ability to view all products, create new products, delete products, and update products
+- Admin panel with ability to view all orders and mark orders as delivered
+- User and admin profile updates
+- Frontend and backend product pagination
 - Loading backdrop to signal state change
-- React-hemet to dynamically change head and meta tag
-- Scroll animations for better user experiences
-- Lazy Load Image to improve the page's loading time
-- Loading skeletons
-- All Product Images are store in AWS S3 Private Bucket
-- AWS CloudFront CDN in front of AWS S3 to increase performance by delivering content (images) faster and HTTPs for S3 Images
+- Dynamic head and meta tag changes using React-helmet
+- Scroll animations for improved user experience
+- Lazy load images for faster page loading time
+- Loading skeletons for visual feedback during loading
+- All product images stored in AWS S3 private bucket
+- AWS CloudFront CDN to deliver content (images) faster and securely using HTTPS for S3 images
 
 ## User Stories
 
-| Title                                            | User Story Description                                                                                                                     | Priority  |
-| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| Good UI/UX design                                | As a visitor, I want the website to have a nice looking UI/UX design so that I can interact with the website with no trouble               | Must Have |
-| User Authentication                              | As a CEO, I require user to login to use some features such as checkout and view orders.                                                   | Must Have |
-| User Authentication using Google/Facebook/others | As a student, I wish to login to the website simply using 1 click google / facebook account                                                | Optional  |
-| Home Page                                        | As a content manager, I wish there is a home page serving as both landing page and introduction to client about the company/website        | Must Have |
-| New Arrivals                                     | As a content manager, I wish there is a page that display all the new arrivals products                                                    | Optional  |
-| All Products Page                                | As a user, I wish to see all the products in a particular page.                                                                            | Must Have |
-| Sorting Products                                 | As a user, I would like to sort the product base on price and ratings                                                                      | Must Have |
-| Filter Products                                  | As a user, I would like to filter the product base on the category, brand, and price                                                       | Must Have |
-| Search Products                                  | As a user, I would like to have the ability to search the product that I want to purchase/view                                             | Must Have |
-| Search with auto complete                        | As a user, I wish the search functionalities comes with auto complete so that it can helps me find the product that I want faster.         | Optional  |
-| Search using Elastic Search                      | As a software developer, I wish to include Elastic Search into the program so that the user can have faster search result.                 | Optional  |
-| Product Detail Page                              | As a content manager, I wish there's a page that display more detailed informations about a product                                        | Must Have |
-| Comments and Ratings                             | As a user, I wish to leave reviews to products that I have purchased so that other's who want to purchased the product can see my reviews. | Must Have |
-| Shopping Cart Page                               | As a user, I wish the website have a shopping cart page where I can add all the products they want to purchase                             | Must Have |
-| Secure Checkout                                  | As a user, I wish my payment checkout is processed securly and no payment informations are stored in website's database                    | Must Have |
-| Scroll Animation                                 | As a content manager, I wish the website can have some scrolling effects to provide better user experience                                 | Optional  |
-| Admin Users page                                 | As a web maintenance supervisor, I would like to see all the users so I can do CRUD operations on it                                       | Must Have |
-| Admin Products page                              | As a web maintenance supervisor, I would like to see all the products so I can do CRUD operations on it                                    | Must Have |
-| Admin Create Products                            | As a web maintenance supervisor, I would like to have the ability to create a product                                                      | Must Have |
-| Admin Update Products                            | As a web maintenance supervisor, I would like to have the ability to update a product                                                      | Must Have |
-| Admin Delete Products                            | As a web maintenance supervisor, I would like to have the ability to delete a product                                                      | Must Have |
-| User Orders page                                 | As a user, I wish to see all the purchased that I have made in the past                                                                    | Must Have |
-| Admin Orders page                                | As a web maintenance supervisor, I would like to see all the orders history                                                                | Must Have |
-| Admin Update Orders                              | As a web maintenance supervisor, I would like to have the ability to update an order infomations                                           | Must Have |
-| Admin/User Update Profiles                       | As a web maintenance supervisor, I would like to have the ability to update other people's profile                                         | Must Have |
-| Domain                                           | As a CEO, I wish the website to have a professional looking domain to help branding my company.                                            | Must Have |
+| Title                         | User Story Description                                                                                                                                       | Priority  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| Intuitive User Interface      | As a website visitor, I want the eCommerce website to have an intuitive and user-friendly interface so that I can browse and shop easily.                    | Must Have |
+| User Authentication           | As the website owner, I require users to log in to access certain features, such as the shopping cart and order history.                                     | Must Have |
+| Social Login                  | As a website user, I want the option to log in using my Google or Facebook account to simplify the login process.                                            | Optional  |
+| Home Page                     | As a content manager, I want a homepage that introduces the website's brand and purpose and showcases featured products to engage users.                     | Must Have |
+| New Arrivals Section          | As a content manager, I want a dedicated page that displays all the new products added to the website to keep users informed about new arrivals.             | Optional  |
+| Product Listing Page          | As a website user, I want to see all the products available for purchase on a single page with filtering and sorting options to simplify the product search. | Must Have |
+| Sorting and Filtering         | As a website user, I want the ability to sort products based on price, rating, and other criteria to find the products I'm interested in quickly.            | Must Have |
+| Product Details Page          | As a content manager, I want a product detail page that displays all relevant information about a product, including images, descriptions, and pricing.      | Must Have |
+| Ratings and Reviews           | As a website user, I want the ability to rate and review products to help other users make informed purchasing decisions.                                    | Must Have |
+| Shopping Cart                 | As a website user, I want a shopping cart page where I can add and remove products and view the total cost of my purchase.                                   | Must Have |
+| Secure Checkout               | As a website user, I want a secure checkout process that encrypts my payment information and prevents unauthorized access to my data.                        | Must Have |
+| Search Functionality          | As a website user, I want the ability to search for products using keywords or product names to quickly find the products I'm looking for.                   | Must Have |
+| Auto-complete Search          | As a website user, I want the search bar to have an auto-complete function to suggest relevant products and streamline my search.                            | Optional  |
+| Elastic Search Integration    | As a website developer, I want to integrate Elastic Search into the website to improve search speed and accuracy for users.                                  | Optional  |
+| Scroll Effects                | As a content manager, I want to use scroll effects to enhance the user experience and make the website more engaging.                                        | Optional  |
+| User Management               | As the website owner, I want an admin user page to manage user accounts, including adding, updating, and deleting users.                                     | Must Have |
+| Product Management            | As the website owner, I want an admin product page to manage product listings, including adding, updating, and deleting products.                            | Must Have |
+| Order Management              | As the website owner, I want an admin order page to manage customer orders, including updating order information and tracking order status.                  | Must Have |
+| User Order History            | As a website user, I want to view my order history, including order status and shipping information, to keep track of my past purchases.                     | Must Have |
+| User Account Management       | As a website user, I want the ability to update my personal information, including my shipping address and payment details.                                  | Must have |
+| Admin/User Profile Management | As the website owner, I want the ability to manage user profiles, including adding, updating, and deleting user information.                                 | Must Have |
+| Professional Domain Name      | As the website owner, I want a professional domain name that reflects the brand and increases the website's credibility.                                     | Must Have |
 
 # Architecture and Organization
 
 ## System Overview
+
 <img src="./images/architecture-diagram.png" />
 <img src="./images/user-flowchart.png" />
 
@@ -240,9 +219,9 @@ eCommerce is a website that contains a bunch of listings for products. By buildi
 
 ## Deployment
 
-Server is currently deployed to Heroku but I am thinking about deploying it to AWS in the future.
+Backend server is currently deployed to Railway.apps
 
-MongoDB Atlas for database.
+MongoDB Atlas for MongoDB database.
 
 AWS S3 for images hosting.
 
@@ -257,28 +236,3 @@ Domain Registered to Google Domain
 | AWS S3             | AWS services to store images (Background Images, Icons, Product images) |
 | AWS CloudFront CDN | AWS services                                                            |
 | Domain             | Google Domain                                                           |
-
-# Design Considerations
-
-## Design Decisions
-
-#### Authentication: JWT vs Session (cookies)
-
-#### Database: Relational (MySQL, PostgreSQL) vs Non-relational (MongoDB)
-
-#### Redux Vs React Context
-
-#### Redux Vs Redux Toolkits
-
-#### REST Vs GraphQL
-
-## Challenges Face
-
-- Learning how to use CSS Preprocessor (Sass).
-- Learning how to use payment gateway (Stripe).
-- Learning how to use AWS S3 & CloudFront & IAM.
-
-## Interesting and noteworthy bugs encoutered during the development
-
-- Heroku H18
-- Stripe API secret key
