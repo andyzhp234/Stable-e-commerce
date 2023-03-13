@@ -10,10 +10,7 @@ export default function NavigationText({ text, url }) {
   }
 
   return (
-    <div
-      className="navigation margin-inline-start-20"
-      onClick={navigateHandler}
-    >
+    <div className="navigation-text" onClick={navigateHandler}>
       <h1>{text}</h1>
     </div>
   );

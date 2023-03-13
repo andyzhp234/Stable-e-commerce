@@ -30,7 +30,7 @@ export default function Checkout({ cartItems, userInfo }) {
         Total Items: {cartItems.length}
       </h1>
       <div
-        class="black-rounded-button margin-block-start-20"
+        className="black-rounded-button margin-block-start-16"
         onClick={checkoutHandler}
       >
         Checkout

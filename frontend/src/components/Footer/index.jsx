@@ -1,5 +1,4 @@
 import React from "react";
-// import CompanyInfo from "./CompanyInfo/CompanyInfo";
 
 export default function Footer() {
   return (

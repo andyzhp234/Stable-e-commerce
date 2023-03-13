@@ -61,55 +61,57 @@ export default function AdminProductList() {
   }, [getAllProducts]);
 
   return (
-    <div className="admin__userlist">
+    <div className="admin-list">
       <DisplayPending pending={pending} />
-      <div className="admin_userlist__container">
+      <div className="admin-list__container">
         {error ? <Alert severity="error">{error}</Alert> : null}
-        <div className="admin__userlist__title">Products</div>
-        <div className="admin__userlist__list">
-          <div
-            className="black-rounded-button self-end"
-            onClick={() => {
-              window.scrollTo(0, 0);
-              navigate("/admin/createproduct");
-            }}
-          >
-            Add New Product
-          </div>
-
-          <div className="admin__userlist__list__title">
-            <div>ID</div>
-            <div>Name</div>
-            <div>Price</div>
-            <div>Category</div>
-            <div>Edit/Delete</div>
-          </div>
-          {products.products?.map((product) => {
-            return (
-              <div key={product._id} className="admin__userlist__list__user">
-                <div>{product._id}</div>
-                <div>{product.name}</div>
-                <div>$ {product.price / 100}</div>
-                <div>{product.category}</div>
-                <div>
-                  <img
-                    src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
-                    alt="edit_icon"
-                    onClick={() => {
-                      window.scrollTo(0, 0);
-                      navigate(`/admin/editproduct/${product._id}`);
-                    }}
-                  />
-                  <img
-                    onClick={() => handleDelete(product._id)}
-                    src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
-                    alt="edit_icon"
-                  />
-                </div>
-              </div>
-            );
-          })}
+        <div
+          className="admin-add-button"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigate("/admin/createproduct");
+          }}
+        >
+          Add New Product
         </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+              <th scope="col">Edit/Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.products?.map((product) => {
+              return (
+                <tr key={product._id}>
+                  <td>{product._id}</td>
+                  <td>{product.name}</td>
+                  <td>$ {product.price / 100}</td>
+                  <td>{product.category}</td>
+                  <td>
+                    <img
+                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
+                      alt="edit_icon"
+                      onClick={() => {
+                        window.scrollTo(0, 0);
+                        navigate(`/admin/editproduct/${product._id}`);
+                      }}
+                    />
+                    <img
+                      onClick={() => handleDelete(product._id)}
+                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
+                      alt="edit_icon"
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
         <Paginate page={products.page} pages={products.pages} />
       </div>
     </div>

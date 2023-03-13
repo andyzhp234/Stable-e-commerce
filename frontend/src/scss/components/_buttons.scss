@@ -4,14 +4,15 @@
   height: 35px;
   width: 100%;
   margin-bottom: 10px;
-  border-radius: 20px;
   border: none;
+  border-radius: 20px;
+  font-size: small;
+  font-weight: 500;
   color: $colors-white;
   background-color: color("blue", 600);
-  font-size: small;
-  font-weight: 600;
-  cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+
   &:hover {
     background-color: color("blue", 700);
   }
@@ -59,15 +60,28 @@
   justify-content: space-between;
   border: 1px solid black;
   border-radius: 30px;
-  padding: 10px 20px;
-  height: 50px;
-  width: 140px;
-  font-size: larger;
+  padding: 5px 10px;
+  height: 40px;
+  width: 90px;
+  font-size: smaller;
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
+  }
+
+  @include breakpoint("md") {
+    height: 50px;
+    width: 140px;
+    padding: 10px 20px;
+    font-size: larger;
+
+    img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
   }
 }
 
@@ -80,18 +94,26 @@
   background-color: $colors-black;
   border-radius: 30px;
   padding: 10px 20px;
-  height: 50px;
-  width: 200px;
+  height: 40px;
+  width: 100px;
+  font-size: x-small;
+  white-space: nowrap;
   cursor: pointer;
+
+  @include breakpoint("md") {
+    height: 50px;
+    width: 250px;
+    font-size: 1rem;
+  }
 }
 
 .mark-delivery-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  width: 140px;
   height: fit-content;
-
+  font-size: 0.5rem;
   border-radius: 30px;
   padding: 10px 20px;
   margin-top: 10px;
@@ -99,6 +121,11 @@
   color: $colors-white;
   background-color: color("green", 500);
   cursor: pointer;
+
+  @include breakpoint("md") {
+    font-size: 1rem;
+    width: 250px;
+  }
 }
 
 .red-button {
@@ -107,5 +134,47 @@
 
   &:hover {
     background-color: color("red", 600);
+  }
+}
+
+.admin-add-button {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $colors-white;
+  background-color: $colors-black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 0.4rem;
+  white-space: nowrap;
+  cursor: pointer;
+
+  @include breakpoint("md") {
+    height: 50px;
+    width: 250px;
+    font-size: 1rem;
+  }
+}
+
+.home-landing-button {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: $colors-white;
+  margin-top: 20px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $colors-black;
+    color: $colors-white;
+  }
+
+  @include breakpoint("lg") {
+    border: 1px solid $colors-black;
   }
 }

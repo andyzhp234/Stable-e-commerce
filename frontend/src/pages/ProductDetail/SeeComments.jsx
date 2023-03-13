@@ -13,7 +13,9 @@ export default function SeeComments({ productInfo }) {
               <h2>{new Date(review.createdAt).toISOString().split("T")[0]}</h2>
             </div>
             <Ratings rating={review.rating} />
-            <div>{review.comment}</div>
+            <h2 className="product_detail_comment_paragraph">
+              {review.comment}
+            </h2>
           </div>
         );
       })}

@@ -63,49 +63,52 @@ export default function AdminUserList() {
   };
 
   return (
-    <div className="admin__userlist">
+    <div className="admin-list">
       <DisplayPending pending={pending} />
-      <div className="admin_userlist__container">
+      <div className="admin-list__container">
         {error ? <Alert severity="error">{error}</Alert> : null}
-        <div className="admin__userlist__title">Users</div>
-        <div className="admin__userlist__list">
-          <div className="admin__userlist__list__title">
-            <div>ID</div>
-            <div>Name</div>
-            <div>Email</div>
-            <div>Admin</div>
-            <div>Edit/Delete</div>
-          </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Admin</th>
+              <th scope="col">Edit/Delete</th>
+            </tr>
+          </thead>
 
-          {users.users?.map((user) => {
-            return (
-              <div key={user._id} className="admin__userlist__list__user">
-                <div>{user._id}</div>
-                <div>{user.name}</div>
-                <div>{user.email}</div>
-                <div>
-                  {user.isAdmin ? (
-                    <span style={{ color: "green" }}>Yes</span>
-                  ) : (
-                    <span style={{ color: "red" }}>No</span>
-                  )}
-                </div>
-                <div>
-                  <img
-                    src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
-                    alt="edit_icon"
-                    onClick={() => navigate(`/admin/editUser/${user._id}`)}
-                  />
-                  <img
-                    onClick={() => handleDelete(user._id)}
-                    src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
-                    alt="edit_icon"
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+          <tbody>
+            {users.users?.map((user) => {
+              return (
+                <tr key={user._id}>
+                  <td>{user._id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>
+                    {user.isAdmin ? (
+                      <span className="color-green-500">Yes</span>
+                    ) : (
+                      <span className="color-red-500">No</span>
+                    )}
+                  </td>
+                  <td>
+                    <img
+                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
+                      alt="edit_icon"
+                      onClick={() => navigate(`/admin/editUser/${user._id}`)}
+                    />
+                    <img
+                      onClick={() => handleDelete(user._id)}
+                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
+                      alt="edit_icon"
+                    />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
         <Paginate page={users.page} pages={users.pages} />
       </div>
     </div>

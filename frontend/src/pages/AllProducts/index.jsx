@@ -22,16 +22,6 @@ export default function AllProducts() {
   const minPriceQuery = searchParams.get("minPrice");
   const maxPriceQuery = searchParams.get("maxPrice");
   const { productListInfo } = productList;
-  // const { pending, error, errorMessage, productListInfo } = productList;
-
-  const [isDesktop, setDesktop] = React.useState(window.innerWidth > 900);
-  const updateMedia = () => {
-    setDesktop(window.innerWidth > 900);
-  };
-  React.useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  });
 
   React.useEffect(() => {
     getProductList(
@@ -68,7 +58,7 @@ export default function AllProducts() {
       ) : (
         <div className="allproducts__title">
           <Meta title="All Products" />
-          <div>All Products</div>
+          <h1>All Products</h1>
           <LazyLoadImage
             wrapperClassName="allproducts__title__image"
             alt={"recommend_product"}
@@ -81,7 +71,7 @@ export default function AllProducts() {
       <Sort />
       <div className="allproducts__listings">
         <div className="allproducts__leftPanelFilter__container">
-          {isDesktop ? <Filter /> : null}
+          <Filter />
         </div>
         <Listing products={productListInfo.products} />
       </div>

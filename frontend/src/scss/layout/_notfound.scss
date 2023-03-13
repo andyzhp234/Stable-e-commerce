@@ -1,20 +1,28 @@
-@use "../abstracts/extendable";
+@use "../abstracts/" as *;
 
 .not_found_container {
   width: 100%;
   min-height: 90vh;
-  @extend %flex-align-center;
+  display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
 
   &__title {
-    font-size: 9vw;
+    font-size: 3rem;
+    @include breakpoint("md") {
+      font-size: 8rem;
+    }
   }
 
   &__description {
-    font-size: 2vw;
+    font-size: 1rem;
     margin-top: 40px;
     margin-bottom: 40px;
+
+    @include breakpoint("md") {
+      font-size: 1.5rem;
+    }
   }
 
   &__backToHome {

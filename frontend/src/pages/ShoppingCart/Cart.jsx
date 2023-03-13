@@ -28,26 +28,24 @@ export default function Cart({ cartItems }) {
   return (
     <div className="shoppingCart__container">
       {cartItems.length === 0 ? (
-        <div>Your shopping cart is currently empty.</div>
+        <h1>Your shopping cart is currently empty.</h1>
       ) : (
         <div>
           {cartItems.map((product) => {
             return (
               <div className="cart_listing" key={product._id}>
-                <div>
-                  <img
-                    className="cart_listing__image"
-                    src={product.image}
-                    alt="product_image"
-                    onClick={() => navigate(`/product/${product._id}`)}
-                  />
-                  <h2
-                    className="cart_listing__text cursor-pointer"
-                    onClick={() => navigate(`/product/${product._id}`)}
-                  >
-                    {product.name}
-                  </h2>
-                </div>
+                <img
+                  className="cart_listing__image"
+                  src={product.image}
+                  alt="product_image"
+                  onClick={() => navigate(`/product/${product._id}`)}
+                />
+                <h2
+                  className="cart_listing__text cursor-pointer grow-1"
+                  onClick={() => navigate(`/product/${product._id}`)}
+                >
+                  {product.name}
+                </h2>
                 <div>
                   <div className="addCount-button">
                     <img

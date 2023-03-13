@@ -14,18 +14,20 @@ dotenv.config();
 connectDB();
 
 const server = express();
-server.use(enforce.HTTPS({ trustProtoHeader: true }));
 
-server.use(
-  cors({
-    origin: ["http://localhost:3000", "https://checkout.stripe.com"],
-  })
-);
+// // server.use(enforce.HTTPS({ trustProtoHeader: true }));
+
+const allowedOrigins = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000",
+  "https://checkout.stripe.com",
+];
+
+server.use(cors({ origin: allowedOrigins }));
 
 server.use("/stripe", stripeRoutes);
 
-// only needed when submitting with application/ x-www-form-urlencoded
-// server.use(express.urlencoded({extended: false}));
+server.use(express.urlencoded({ extended: false }));
 
 // parse request body to JSON format
 server.use(express.json());
@@ -34,13 +36,13 @@ server.use("/api/products", productRoutes);
 server.use("/api/users", userRoutes);
 server.use("/api/orders", orderRoutes);
 
-const __dirname = path.resolve();
-if (process.env.MODE === "production") {
-  server.use(express.static(path.join(__dirname, "/frontend/build")));
-  server.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-}
+// const __dirname = path.resolve();
+// if (process.env.MODE === "production") {
+//   server.use(express.static(path.join(__dirname, "/frontend/build")));
+//   server.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+//   });
+// }
 
 const PORT = process.env.PORT;
 server.listen(PORT, () => {

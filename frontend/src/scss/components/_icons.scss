@@ -1,8 +1,4 @@
-.brand-logo {
-  width: 100px;
-  // height: 80px;
-  cursor: pointer;
-}
+@use "../abstracts/" as *;
 
 .icon-medium {
   width: 30px;
@@ -12,4 +8,28 @@
 .icon-large {
   width: 35px;
   height: 35px;
+}
+
+.brand-logo {
+  display: none;
+  cursor: pointer;
+
+  @include breakpoint(sm) {
+    display: flex;
+    height: 60px;
+    width: 80px;
+  }
+}
+
+.header-icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  cursor: pointer;
+
+  @include breakpoint(lg) {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
 }

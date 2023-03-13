@@ -4,17 +4,34 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: 30px;
-  border-top: 1px solid color("gray", 300);
   list-style: none;
+  padding: 20px 10px;
+  font-size: smaller;
+  border-top: 1px solid color("gray", 300);
 
   li {
-    margin-right: spacing(36);
-    font-size: fs(500);
+    margin-left: spacing(12);
+    font-size: fs(100);
     cursor: pointer;
     &:hover {
       text-underline-offset: 2px;
       text-decoration: underline;
+    }
+  }
+
+  @include breakpoint(sm) {
+    padding: 25px;
+    li {
+      margin-right: spacing(16);
+      font-size: fs(200);
+    }
+  }
+
+  @include breakpoint(lg) {
+    padding: 30px;
+    li {
+      margin-right: spacing(36);
+      font-size: fs(500);
     }
   }
 }

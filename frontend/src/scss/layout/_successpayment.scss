@@ -3,33 +3,48 @@
 .successPayment {
   width: 100%;
   min-height: 90vh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.successPayment_container {
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.successPayment_container img {
-  width: 80px;
-  height: 80px;
-}
-
-.successPayment_title {
-  margin-top: 15px;
-  font-size: 35px;
+  font-size: 1rem;
   font-weight: 600;
-  color: color("teal", 600);
-}
 
-.successPayment_continue_shopping {
-  margin-top: 40px;
-  text-decoration: underline;
-  cursor: pointer;
+  @include breakpoint("lg") {
+    font-size: 1.3rem;
+  }
+
+  &__container {
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__title {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: color("teal", 600);
+
+    @include breakpoint("lg") {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__redirect {
+    margin-top: 40px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

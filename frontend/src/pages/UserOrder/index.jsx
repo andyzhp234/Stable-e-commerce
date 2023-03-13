@@ -43,13 +43,12 @@ export default function OrderPage() {
           return (
             <div className="orders_listing" key={order._id}>
               <div className="orders_listing_header">
-                <div className="orders_listing_id">Order: {order._id}</div>
                 <div className="orders_listing_header_rest">
-                  Date: {new Date(order.createdAt).toISOString().slice(0, 10)}
+                  {new Date(order.createdAt).toISOString().slice(0, 10)}
                 </div>
 
                 <div className="orders_listing_header_totalPrice">
-                  Total: $ {order.totalPrice / 100}
+                  $ {order.totalPrice / 100}
                 </div>
 
                 <div
@@ -75,18 +74,13 @@ export default function OrderPage() {
                     );
                   })}
                 </div>
-                <div className="order_listing_body_shipping_description">
+                <div className="order_listing_body_description">
                   <div style={{ fontWeight: 700 }}>Shipping Address</div>
                   <div>{order.shippingAddress.line1}</div>
                   <div>{order.shippingAddress.line2}</div>
                   <div>{order.shippingAddress.city}</div>
                   <div>{order.shippingAddress.postalCode}</div>
                   <div>{order.shippingAddress.country}</div>
-                </div>
-                <div className="order_listing_body_delivery">
-                  <div style={{ fontWeight: 700 }}>Delivery Status:</div>
-
-                  <div>{order.isDelivered ? "Delivered" : "On the Way"}</div>
                 </div>
               </div>
             </div>

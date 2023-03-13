@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+
+.admin-list {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-list__container {
+  width: 90%;
+
+  table {
+    width: 100%;
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top: 20px;
+    border-spacing: 0;
+  }
+
+  th {
+    font-weight: 600;
+    padding-block: 10px;
+    border-bottom: 1px solid black;
+  }
+
+  td {
+    padding-block: 10px;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+    margin: 0px 2px;
+    cursor: pointer;
+    @include breakpoint("md") {
+      width: 25px;
+      height: 25px;
+      margin: 0px 6px;
+    }
+  }
+
+  @include breakpoint("sm") {
+    table {
+      font-size: 0.7rem;
+    }
+  }
+
+  @include breakpoint("md") {
+    table {
+      font-size: 1rem;
+      margin-top: 40px;
+    }
+    td {
+      padding-block: 20px;
+    }
+  }
+}
+
+.randome {
+  font-size: 0.5rem;
+}

@@ -143,14 +143,11 @@ export default function AdminEditOrder() {
           ) : (
             <div style={{ color: "red" }}>On the Way</div>
           )}
-          <div
-            className="mark-delivery-button fs-400"
-            onClick={deliveredHandler}
-          >
+          <div className="mark-delivery-button" onClick={deliveredHandler}>
             Mark As Delivered
           </div>
           <div
-            className="mark-delivery-button red-button fs-400"
+            className="mark-delivery-button red-button"
             onClick={notDeliveredHandler}
           >
             Mark As Not Delivered
