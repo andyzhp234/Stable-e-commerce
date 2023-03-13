@@ -17,9 +17,9 @@ https://www.stable-store.com
 
 # Screenshots
 
-<img src="../stable-eCommerce/documentations/image/../images/readme-screenshots/home.png" />
-<img src="../stable-eCommerce/documentations/image/../images/readme-screenshots/allProducts.png" />
-<img src="../stable-eCommerce/documentations/image/../images/readme-screenshots/adminLists.png" />
+<img src="documentations/image/../images/readme-screenshots/home.png" />
+<img src="documentations/image/../images/readme-screenshots/allProducts.png" />
+<img src="documentations/image/../images/readme-screenshots/adminLists.png" />
 
 ## Features
 
