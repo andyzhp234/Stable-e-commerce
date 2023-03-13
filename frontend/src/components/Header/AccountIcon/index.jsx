@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import IconAccount from "../../../assets/account.png";
+// import IconAccount from "../../../assets/account.png";
 import HeaderAdmin from "./HeaderAdmin";
 import HeaderUser from "./HeaderUser";
 import HeaderIcon from "../HeaderIcon";
@@ -35,6 +35,11 @@ export default function AccountIcon() {
       );
     }
   } else {
-    return <HeaderIcon src={IconAccount} onClick={() => navigate("/login")} />;
+    return (
+      <HeaderIcon
+        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/account-1.png"
+        onClick={() => navigate("/login")}
+      />
+    );
   }
 }
