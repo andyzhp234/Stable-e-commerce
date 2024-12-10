@@ -22,9 +22,9 @@ export default function Ratings(prop) {
         src={
           rating > 0
             ? rating > 0.5
-              ? { StarFillIcon }
-              : { StarHalfFillIcon }
-            : { StarUnfillIcon }
+              ? StarFillIcon
+              : StarHalfFillIcon
+            : StarUnfillIcon
         }
         alt="ratings"
         style={starStyle}
@@ -33,9 +33,9 @@ export default function Ratings(prop) {
         src={
           rating > 1
             ? rating > 1.5
-              ? { StarFillIcon }
-              : { StarHalfFillIcon }
-            : { StarUnfillIcon }
+              ? StarFillIcon
+              : StarHalfFillIcon
+            : StarUnfillIcon
         }
         alt="ratings"
         style={starStyle}
@@ -44,9 +44,9 @@ export default function Ratings(prop) {
         src={
           rating > 2
             ? rating > 2.5
-              ? { StarFillIcon }
-              : { StarHalfFillIcon }
-            : { StarUnfillIcon }
+              ? StarFillIcon
+              : StarHalfFillIcon
+            : StarUnfillIcon
         }
         alt="ratings"
         style={starStyle}
@@ -55,9 +55,9 @@ export default function Ratings(prop) {
         src={
           rating > 3
             ? rating > 3.5
-              ? { StarFillIcon }
-              : { StarHalfFillIcon }
-            : { StarUnfillIcon }
+              ? StarFillIcon
+              : StarHalfFillIcon
+            : StarUnfillIcon
         }
         alt="ratings"
         style={starStyle}
@@ -66,9 +66,9 @@ export default function Ratings(prop) {
         src={
           rating > 4
             ? rating > 4.5
-              ? { StarFillIcon }
-              : { StarHalfFillIcon }
-            : { StarUnfillIcon }
+              ? StarFillIcon
+              : StarHalfFillIcon
+            : StarUnfillIcon
         }
         alt="ratings"
         style={{ ...starStyle, marginRight: "15px" }}
