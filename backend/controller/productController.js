@@ -185,14 +185,15 @@ const getProductById = async (req, res) => {
 // @route   DELETE /api/products/:id
 // @access  Private/Admin
 const deleteProductById = async (req, res) => {
+  // Disable the feature
+  return res.status(403).json({ message: "Feature disabled" });
+
   try {
     const products = await Product.findById(req.params.id);
     if (products) {
       // first delete img in AWS
       for (let i = 0; i < products.images.length; i++) {
-        let imageFileName = products.images[i].split(
-          "https://d2c0vv5h4nuw6w.cloudfront.net/images/"
-        )[1];
+        let imageFileName = products.images[i].split("https://xxx/images/")[1];
         const params = {
           Bucket: process.env.AWS_BUCKET_NAME,
           Key: `images/${imageFileName}`,
@@ -220,6 +221,9 @@ const deleteProductById = async (req, res) => {
 // @route   POST /api/products
 // @access  Private/Admin
 const createProduct = async (req, res) => {
+  // Disable the feature
+  return res.status(403).json({ message: "Feature disabled" });
+
   try {
     let images = [];
     for (let i = 0; i < req.files.length; i++) {
@@ -232,7 +236,7 @@ const createProduct = async (req, res) => {
       };
       const command = new PutObjectCommand(params);
       await s3.send(command);
-      images.push("https://d2c0vv5h4nuw6w.cloudfront.net/images/" + imageName);
+      images.push("https://xxx/images/" + imageName);
     }
     const product = new Product({
       name: req.body.name,
@@ -258,6 +262,9 @@ const createProduct = async (req, res) => {
 // @route   PUT /api/products/:id
 // @access  Private/Admin
 const updateProduct = async (req, res) => {
+  // Disable the feature
+  return res.status(403).json({ message: "Feature disabled" });
+
   try {
     let {
       name,
@@ -279,9 +286,7 @@ const updateProduct = async (req, res) => {
 
         // delete all old images
         for (let i = 0; i < product.images.length; i++) {
-          let imageFileName = product.images[i].split(
-            "https://d2c0vv5h4nuw6w.cloudfront.net/images/"
-          )[1];
+          let imageFileName = product.images[i].split("https://xxx/images/")[1];
           const params = {
             Bucket: process.env.AWS_BUCKET_NAME,
             Key: `images/${imageFileName}`,
@@ -305,9 +310,7 @@ const updateProduct = async (req, res) => {
           };
           const command = new PutObjectCommand(params);
           await s3.send(command);
-          images.push(
-            "https://d2c0vv5h4nuw6w.cloudfront.net/images/" + imageName
-          );
+          images.push("https://xxx/images/" + imageName);
         }
       }
 
