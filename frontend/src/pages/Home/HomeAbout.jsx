@@ -13,14 +13,14 @@ export default function HomeAbout() {
       </p>
       <img
         className="home__about__bottomImg"
-        src="https://d2c0vv5h4nuw6w.cloudfront.net/images/bg-landing.jpg"
+        src="../../assets/images/bg-landing.jpg"
         alt="landing background images"
         data-aos="fade-up"
         data-aos-duration="1000"
       />
       <img
         className="home__about__rightImg"
-        src="https://d2c0vv5h4nuw6w.cloudfront.net/images/bg-landing-1.jpg"
+        src="../../assets/images/bg-landing-1.jpg"
         alt="landing background images"
         data-aos="fade-up"
         data-aos-duration="1000"

@@ -19,9 +19,9 @@ export default function Ratings(prop) {
         src={
           rating > 0
             ? rating > 0.5
-              ? "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-fill.png"
-              : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-half-fill.png"
-            : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-unfill.png"
+              ? "../../assets/icons/star-fill.png"
+              : "../../assets/icons/star-half-fill.png"
+            : "../../assets/icons/star-unfill.png"
         }
         alt="ratings"
         style={starStyle}
@@ -30,9 +30,9 @@ export default function Ratings(prop) {
         src={
           rating > 1
             ? rating > 1.5
-              ? "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-fill.png"
-              : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-half-fill.png"
-            : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-unfill.png"
+              ? "../../assets/icons/star-fill.png"
+              : "../../assets/icons/star-half-fill.png"
+            : "../../assets/icons/star-unfill.png"
         }
         alt="ratings"
         style={starStyle}
@@ -41,9 +41,9 @@ export default function Ratings(prop) {
         src={
           rating > 2
             ? rating > 2.5
-              ? "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-fill.png"
-              : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-half-fill.png"
-            : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-unfill.png"
+              ? "../../assets/icons/star-fill.png"
+              : "../../assets/icons/star-half-fill.png"
+            : "../../assets/icons/star-unfill.png"
         }
         alt="ratings"
         style={starStyle}
@@ -52,9 +52,9 @@ export default function Ratings(prop) {
         src={
           rating > 3
             ? rating > 3.5
-              ? "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-fill.png"
-              : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-half-fill.png"
-            : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-unfill.png"
+              ? "../../assets/icons/star-fill.png"
+              : "../../assets/icons/star-half-fill.png"
+            : "../../assets/icons/star-unfill.png"
         }
         alt="ratings"
         style={starStyle}
@@ -63,9 +63,9 @@ export default function Ratings(prop) {
         src={
           rating > 4
             ? rating > 4.5
-              ? "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-fill.png"
-              : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-half-fill.png"
-            : "https://d2c0vv5h4nuw6w.cloudfront.net/icons/star-unfill.png"
+              ? "../../assets/icons/star-fill.png"
+              : "../../assets/icons/star-half-fill.png"
+            : "../../assets/icons/star-unfill.png"
         }
         alt="ratings"
         style={{ ...starStyle, marginRight: "15px" }}

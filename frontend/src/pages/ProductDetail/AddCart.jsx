@@ -23,7 +23,7 @@ export default function AddCart({ productInfo, count, setCount }) {
         {productInfo.countInStock > 0 ? (
           <div className="addCount-button margin-inline-end-16">
             <img
-              src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/minus-icon.png"
+              src="../../assets/icons/minus-icon.png"
               alt="minus-button"
               onClick={() =>
                 setCount((prevState) => {
@@ -34,7 +34,7 @@ export default function AddCart({ productInfo, count, setCount }) {
             />
             <h1>{count}</h1>
             <img
-              src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/plus-icon.png"
+              src="../../assets/icons/plus-icon.png"
               alt="plus-button"
               onClick={() => setCount((prevState) => prevState + 1)}
             />

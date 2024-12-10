@@ -28,8 +28,8 @@ export default function NewArrivals() {
             wrapperClassName="newArrival__landingImg"
             alt="newarrival_background"
             effect="blur"
-            src="https://d2c0vv5h4nuw6w.cloudfront.net/images/6848967646007edc.jpg"
-            placeholderSrc="https://d2c0vv5h4nuw6w.cloudfront.net/images/6848967646007edc.jpg"
+            src="../../assets/images/6848967646007edc.jpg"
+            placeholderSrc="../../assets/images/6848967646007edc.jpg"
           />
         </div>
         <div className="newarrivals__listings">

@@ -41,7 +41,7 @@ export default function Sort() {
 
       <img
         id="filter"
-        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/filters.png"
+        src="../../../../assets/icons/filters.png"
         alt=""
         onClick={() => setOpenModal(true)}
       />
@@ -60,7 +60,7 @@ export default function Sort() {
                 width: "30px",
                 height: "30px",
               }}
-              src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/close.png"
+              src="../../../../assets/icons/close.png"
               alt="close_modal"
               onClick={() => setOpenModal(false)}
             />

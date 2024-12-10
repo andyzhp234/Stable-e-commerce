@@ -77,10 +77,10 @@ export default function index() {
           <p>
             <strong>Website</strong> refers to Stable, accessible from{" "}
             <a
-              href="https://www.stable-store.com/"
+              href="https://stable-e-commerce.up.railway.app/"
               rel="external nofollow noopener"
             >
-              https://www.stable-store.com/
+              https://stable-e-commerce.up.railway.app/
             </a>
           </p>
         </li>

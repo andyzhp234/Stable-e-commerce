@@ -63,8 +63,8 @@ export default function AllProducts() {
             wrapperClassName="allproducts__title__image"
             alt={"recommend_product"}
             effect="blur"
-            src="https://d2c0vv5h4nuw6w.cloudfront.net/images/b670bb1fd0ff3f29.jpg"
-            placeholderSrc="https://d2c0vv5h4nuw6w.cloudfront.net/images/b670bb1fd0ff3f29.jpg"
+            src="../../assets/images/b670bb1fd0ff3f29.jpg"
+            placeholderSrc="../../assets/images/b670bb1fd0ff3f29.jpg"
           />
         </div>
       )}

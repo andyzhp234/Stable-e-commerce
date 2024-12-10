@@ -22,11 +22,11 @@ export default function HeaderRightMenu() {
   return (
     <div className="header__container">
       <HeaderIcon
-        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/search.png"
+        src="../../../assets/icons/search.png"
         onClick={openSearchHandler}
       />
       <HeaderIcon
-        src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/shopping-cart.png"
+        src="../../../assets/icons/shopping-cart.png"
         onClick={navigateHandler}
       />
       <AccountIcon />

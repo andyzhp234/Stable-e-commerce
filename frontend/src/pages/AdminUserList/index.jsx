@@ -94,13 +94,13 @@ export default function AdminUserList() {
                   </td>
                   <td>
                     <img
-                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
+                      src="../../../assets/icons/edit.png"
                       alt="edit_icon"
                       onClick={() => navigate(`/admin/editUser/${user._id}`)}
                     />
                     <img
                       onClick={() => handleDelete(user._id)}
-                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
+                      src="../../../assets/icons/delete.png"
                       alt="edit_icon"
                     />
                   </td>

@@ -94,7 +94,7 @@ export default function AdminProductList() {
                   <td>{product.category}</td>
                   <td>
                     <img
-                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/edit.png"
+                      src="../../assets/icons/edit.png"
                       alt="edit_icon"
                       onClick={() => {
                         window.scrollTo(0, 0);
@@ -103,7 +103,7 @@ export default function AdminProductList() {
                     />
                     <img
                       onClick={() => handleDelete(product._id)}
-                      src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/delete.png"
+                      src="../../assets/icons/delete.png"
                       alt="edit_icon"
                     />
                   </td>

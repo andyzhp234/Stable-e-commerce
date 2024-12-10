@@ -25,7 +25,7 @@ export default function SearchModal({ openModal, setOpenModal }) {
             <input onChange={(e) => setSearch(e.target.value)} />
             <img
               className="icon-medium margin-inline-end-36"
-              src="https://d2c0vv5h4nuw6w.cloudfront.net/icons/close.png"
+              src="../../assets/icons/close.png"
               alt="close_modal"
               onClick={() => setOpenModal(false)}
             />
