@@ -3,6 +3,7 @@ import { getNewArrivals } from "../../lib/axiosAPI";
 import Meta from "../../components/Meta";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ProductsPrimary from "../../components/ProductsPrimary";
+import BackgroundIMG from "../../assets/images/6848967646007edc.jpg";
 
 export default function NewArrivals() {
   const [newArrivals, setNewArrivals] = React.useState([]);
@@ -28,12 +29,12 @@ export default function NewArrivals() {
             wrapperClassName="newArrival__landingImg"
             alt="newarrival_background"
             effect="blur"
-            src="../../assets/images/6848967646007edc.jpg"
-            placeholderSrc="../../assets/images/6848967646007edc.jpg"
+            src={BackgroundIMG}
+            placeholderSrc={BackgroundIMG}
           />
         </div>
         <div className="newarrivals__listings">
-          {newArrivals.map((item) => {
+          {newArrivals?.map((item) => {
             return <ProductsPrimary key={item._id} product={item} />;
           })}
         </div>

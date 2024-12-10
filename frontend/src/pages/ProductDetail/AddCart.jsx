@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/action/apiCart.js";
+import MinusIcon from "../../assets/icons/minus-icon.png";
+import PlusIcon from "../../assets/icons/plus-icon.png";
 
 export default function AddCart({ productInfo, count, setCount }) {
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ export default function AddCart({ productInfo, count, setCount }) {
         {productInfo.countInStock > 0 ? (
           <div className="addCount-button margin-inline-end-16">
             <img
-              src="../../assets/icons/minus-icon.png"
+              src={MinusIcon}
               alt="minus-button"
               onClick={() =>
                 setCount((prevState) => {
@@ -34,7 +36,7 @@ export default function AddCart({ productInfo, count, setCount }) {
             />
             <h1>{count}</h1>
             <img
-              src="../../assets/icons/plus-icon.png"
+              src={PlusIcon}
               alt="plus-button"
               onClick={() => setCount((prevState) => prevState + 1)}
             />

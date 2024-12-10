@@ -2,6 +2,8 @@ import React from "react";
 import { addToCart, deleteFromCart } from "../../redux/action/apiCart.js";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import MinusIcon from "../../assets/icons/minus-icon.png";
+import PlusIcon from "../../assets/icons/plus-icon.png";
 
 export default function Cart({ cartItems }) {
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ export default function Cart({ cartItems }) {
         <h1>Your shopping cart is currently empty.</h1>
       ) : (
         <div>
-          {cartItems.map((product) => {
+          {cartItems?.map((product) => {
             return (
               <div className="cart_listing" key={product._id}>
                 <img
@@ -49,13 +51,13 @@ export default function Cart({ cartItems }) {
                 <div>
                   <div className="addCount-button">
                     <img
-                      src="../../assets/icons/minus-icon.png"
+                      src={MinusIcon}
                       alt=""
                       onClick={(e) => quantityHandler(product, product.qty - 1)}
                     />
                     {product.qty}
                     <img
-                      src="../../assets/icons/plus-icon.png"
+                      src={PlusIcon}
                       alt=""
                       onClick={(e) => quantityHandler(product, product.qty + 1)}
                     />

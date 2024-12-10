@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
         (prev) => product._id === prev._id
       );
       if (existItem) {
-        state.cartItems = state.cartItems.map((prev) =>
+        state.cartItems = state.cartItems?.map((prev) =>
           prev._id === product._id ? product : prev
         );
       } else {

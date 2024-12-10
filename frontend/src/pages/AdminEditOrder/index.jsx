@@ -93,7 +93,7 @@ export default function AdminEditOrder() {
             <Alert severity="error">{error}</Alert>
           ) : null}
           <div className="order-detail__section__title">Order Items</div>
-          {order?.orderItems.map((item) => {
+          {order?.orderItems?.map((item) => {
             return (
               <div
                 key={item._id}

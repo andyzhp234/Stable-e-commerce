@@ -7,6 +7,8 @@ import Paginate from "../../components/Paginate/index.jsx";
 import { useSearchParams } from "react-router-dom";
 import DisplayPending from "../../components/DisplayPending";
 import Alert from "@mui/material/Alert";
+import EditIcon from "../../assets/icons/edit.png";
+import DeleteIcon from "../../assets/icons/delete.png";
 
 export default function AdminProductList() {
   const dispatch = useDispatch();
@@ -94,7 +96,7 @@ export default function AdminProductList() {
                   <td>{product.category}</td>
                   <td>
                     <img
-                      src="../../assets/icons/edit.png"
+                      src={EditIcon}
                       alt="edit_icon"
                       onClick={() => {
                         window.scrollTo(0, 0);
@@ -103,7 +105,7 @@ export default function AdminProductList() {
                     />
                     <img
                       onClick={() => handleDelete(product._id)}
-                      src="../../assets/icons/delete.png"
+                      src={DeleteIcon}
                       alt="edit_icon"
                     />
                   </td>

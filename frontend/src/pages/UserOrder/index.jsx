@@ -62,7 +62,7 @@ export default function OrderPage() {
                 <img src={order.orderItems[0].image} alt="listing_image" />
                 <div className="order_listing_body_description">
                   <div style={{ fontWeight: 700 }}>Products:</div>
-                  {order.orderItems.map((individualItem, index) => {
+                  {order.orderItems?.map((individualItem, index) => {
                     return (
                       <div key={index}>
                         {index < 3

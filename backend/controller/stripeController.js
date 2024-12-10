@@ -10,7 +10,7 @@ const stripeCheckOut = async (req, res) => {
 
     let metaDatas = {};
     let itemsList = [];
-    orderItems.map((item, index) => {
+    orderItems?.map((item, index) => {
       itemsList.push({
         price_data: {
           currency: "usd",

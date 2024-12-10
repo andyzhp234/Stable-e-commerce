@@ -8,6 +8,7 @@ import Paginate from "../../components/Paginate/index.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductList } from "../../redux/action/apiProductList.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import BackgroundImg from "../../assets/images/b670bb1fd0ff3f29.jpg";
 
 export default function AllProducts() {
   const dispatch = useDispatch();
@@ -63,8 +64,8 @@ export default function AllProducts() {
             wrapperClassName="allproducts__title__image"
             alt={"recommend_product"}
             effect="blur"
-            src="../../assets/images/b670bb1fd0ff3f29.jpg"
-            placeholderSrc="../../assets/images/b670bb1fd0ff3f29.jpg"
+            src={BackgroundImg}
+            placeholderSrc={BackgroundImg}
           />
         </div>
       )}

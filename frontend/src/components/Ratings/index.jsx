@@ -1,4 +1,7 @@
 import React from "react";
+import StarFillIcon from "../../assets/icons/star-fill.png";
+import StarHalfFillIcon from "../../assets/icons/star-half-fill.png";
+import StarUnfillIcon from "../../assets/icons/star-unfill.png";
 
 export default function Ratings(prop) {
   let rating;
@@ -19,9 +22,9 @@ export default function Ratings(prop) {
         src={
           rating > 0
             ? rating > 0.5
-              ? "../../assets/icons/star-fill.png"
-              : "../../assets/icons/star-half-fill.png"
-            : "../../assets/icons/star-unfill.png"
+              ? { StarFillIcon }
+              : { StarHalfFillIcon }
+            : { StarUnfillIcon }
         }
         alt="ratings"
         style={starStyle}
@@ -30,9 +33,9 @@ export default function Ratings(prop) {
         src={
           rating > 1
             ? rating > 1.5
-              ? "../../assets/icons/star-fill.png"
-              : "../../assets/icons/star-half-fill.png"
-            : "../../assets/icons/star-unfill.png"
+              ? { StarFillIcon }
+              : { StarHalfFillIcon }
+            : { StarUnfillIcon }
         }
         alt="ratings"
         style={starStyle}
@@ -41,9 +44,9 @@ export default function Ratings(prop) {
         src={
           rating > 2
             ? rating > 2.5
-              ? "../../assets/icons/star-fill.png"
-              : "../../assets/icons/star-half-fill.png"
-            : "../../assets/icons/star-unfill.png"
+              ? { StarFillIcon }
+              : { StarHalfFillIcon }
+            : { StarUnfillIcon }
         }
         alt="ratings"
         style={starStyle}
@@ -52,9 +55,9 @@ export default function Ratings(prop) {
         src={
           rating > 3
             ? rating > 3.5
-              ? "../../assets/icons/star-fill.png"
-              : "../../assets/icons/star-half-fill.png"
-            : "../../assets/icons/star-unfill.png"
+              ? { StarFillIcon }
+              : { StarHalfFillIcon }
+            : { StarUnfillIcon }
         }
         alt="ratings"
         style={starStyle}
@@ -63,9 +66,9 @@ export default function Ratings(prop) {
         src={
           rating > 4
             ? rating > 4.5
-              ? "../../assets/icons/star-fill.png"
-              : "../../assets/icons/star-half-fill.png"
-            : "../../assets/icons/star-unfill.png"
+              ? { StarFillIcon }
+              : { StarHalfFillIcon }
+            : { StarUnfillIcon }
         }
         alt="ratings"
         style={{ ...starStyle, marginRight: "15px" }}

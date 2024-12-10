@@ -2,6 +2,8 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import Filter from "../Filter";
+import FilterIcon from "../../../../assets/icons/filters.png";
+import CloseIcon from "../../../../assets/icons/close.png";
 
 export default function Sort() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -41,7 +43,7 @@ export default function Sort() {
 
       <img
         id="filter"
-        src="../../../../assets/icons/filters.png"
+        src={FilterIcon}
         alt=""
         onClick={() => setOpenModal(true)}
       />
@@ -60,7 +62,7 @@ export default function Sort() {
                 width: "30px",
                 height: "30px",
               }}
-              src="../../../../assets/icons/close.png"
+              src={CloseIcon}
               alt="close_modal"
               onClick={() => setOpenModal(false)}
             />

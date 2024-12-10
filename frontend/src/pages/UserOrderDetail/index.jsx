@@ -30,7 +30,7 @@ export default function OrderDetailPage() {
 
             <div className="order-detail__section">
               <div className="order-detail__section__title">Order Items</div>
-              {order?.orderItems.map((item) => {
+              {order?.orderItems?.map((item) => {
                 return (
                   <div
                     key={item._id}

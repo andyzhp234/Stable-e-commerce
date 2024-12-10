@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import CloseIcon from "../../assets/icons/close.png";
 import ModalBody from "./ModalBody";
 
 export default function SearchModal({ openModal, setOpenModal }) {
@@ -25,7 +26,7 @@ export default function SearchModal({ openModal, setOpenModal }) {
             <input onChange={(e) => setSearch(e.target.value)} />
             <img
               className="icon-medium margin-inline-end-36"
-              src="../../assets/icons/close.png"
+              src={CloseIcon}
               alt="close_modal"
               onClick={() => setOpenModal(false)}
             />
